@@ -1,5 +1,6 @@
-google-genai
-tavily-python
-python-dotenv
-pydantic
-pytest
+google-genai>=2.0
+tavily-python>=0.7
+pydantic>=2.6
+python-dotenv>=1.0
+streamlit>=1.40
+pytest>=8.0
