@@ -1,0 +1,181 @@
+{
+  "dataset": "data\\benchmark\\atlas_seed_v1.jsonl",
+  "n": 40,
+  "model": "gemini-3.5-flash-lite",
+  "served_by": {
+    "gemini-3.5-flash-lite": 4
+  },
+  "batch_size": 12,
+  "runs": 1,
+  "aggregate": {
+    "accuracy": {
+      "mean": 0.975,
+      "sd": 0.0,
+      "min": 0.975,
+      "max": 0.975,
+      "runs": [
+        0.975
+      ]
+    },
+    "macro_f1": {
+      "mean": 0.9749,
+      "sd": 0.0,
+      "min": 0.9749,
+      "max": 0.9749,
+      "runs": [
+        0.9749
+      ]
+    },
+    "lenient_accuracy": {
+      "mean": 0.75,
+      "sd": 0.0,
+      "min": 0.75,
+      "max": 0.75,
+      "runs": [
+        0.75
+      ]
+    },
+    "lenient_macro_f1": {
+      "mean": 0.6605,
+      "sd": 0.0,
+      "min": 0.6605,
+      "max": 0.6605,
+      "runs": [
+        0.6605
+      ]
+    },
+    "problem_precision": {
+      "mean": 0.9524,
+      "sd": 0.0,
+      "min": 0.9524,
+      "max": 0.9524,
+      "runs": [
+        0.9524
+      ]
+    },
+    "problem_recall": {
+      "mean": 1.0,
+      "sd": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "runs": [
+        1.0
+      ]
+    },
+    "problem_f1": {
+      "mean": 0.9756,
+      "sd": 0.0,
+      "min": 0.9756,
+      "max": 0.9756,
+      "runs": [
+        0.9756
+      ]
+    },
+    "seconds_per_run": {
+      "mean": 10.69,
+      "sd": 0.0,
+      "min": 10.69,
+      "max": 10.69,
+      "runs": [
+        10.69
+      ]
+    },
+    "calls_per_run": {
+      "mean": 4,
+      "sd": 0.0,
+      "min": 4,
+      "max": 4,
+      "runs": [
+        4
+      ]
+    },
+    "prompt_tokens_per_run": {
+      "mean": 6471,
+      "sd": 0.0,
+      "min": 6471,
+      "max": 6471,
+      "runs": [
+        6471
+      ]
+    },
+    "output_tokens_per_run": {
+      "mean": 3500,
+      "sd": 0.0,
+      "min": 3500,
+      "max": 3500,
+      "runs": [
+        3500
+      ]
+    },
+    "per_class_f1": {
+      "supported": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "runs": [
+          1.0
+        ]
+      },
+      "partially_supported": {
+        "mean": 0.9474,
+        "sd": 0.0,
+        "min": 0.9474,
+        "max": 0.9474,
+        "runs": [
+          0.9474
+        ]
+      },
+      "unsupported": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "runs": [
+          1.0
+        ]
+      },
+      "contradicted": {
+        "mean": 0.9524,
+        "sd": 0.0,
+        "min": 0.9524,
+        "max": 0.9524,
+        "runs": [
+          0.9524
+        ]
+      }
+    }
+  },
+  "run_dirs": [
+    "data\\experiments\\verifier_seed_lite_defended\\runs\\20261108_170949"
+  ],
+  "confusion_matrices": [
+    {
+      "supported": {
+        "supported": 10,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 9,
+        "unsupported": 0,
+        "contradicted": 1
+      },
+      "unsupported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 10,
+        "contradicted": 0
+      },
+      "contradicted": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 10
+      }
+    }
+  ],
+  "created_at": "2026-11-08T17:09:49"
+}

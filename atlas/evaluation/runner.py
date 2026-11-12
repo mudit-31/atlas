@@ -10,6 +10,7 @@ Dataset format (JSON Lines), one example per line:
 from __future__ import annotations
 
 import json
+import logging
 import time
 from datetime import datetime
 from pathlib import Path
@@ -22,7 +23,9 @@ from ..schemas import LABEL_ORDER, Claim, Evidence, Label, Usage
 from ..verify import judge_claims
 from .metrics import compute_metrics
 
-DEFAULT_DATASET = Path(__file__).resolve().parents[2] / "data" / "benchmark" / "atlas_seed_v1.jsonl"
+logger = logging.getLogger(__name__)
+
+DEFAULT_DATASET =Path(__file__).resolve().parents[2] / "data" / "benchmark" / "atlas_seed_v1.jsonl"
 
 
 class Example(BaseModel):
@@ -31,6 +34,8 @@ class Example(BaseModel):
     evidence: list[str] = Field(default_factory=list)
     label: Label
     note: str = ""
+    # Optional 1-based indexes into `evidence` of the gold rationale passages.
+    rationale: list[int] = Field(default_factory=list)
 
     @field_validator("label", mode="before")
     @classmethod
@@ -90,23 +95,47 @@ def run_evaluation(
     gold = [e.label.value for e in examples]
     pred = [v.label.value for v in verdicts]
     metrics = compute_metrics(gold, pred, [v.confidence for v in verdicts])
+    # Lenient view: "partially supported" counts as "supported". Useful for
+    # datasets such as SciFact that have no partial label.
+    lenient = [Label.SUPPORTED.value if p == Label.PARTIALLY_SUPPORTED.value else p for p in pred]
+    metrics["lenient"] = compute_metrics(gold, lenient)
 
-    predictions = [
-        {
-            "id": e.id,
-            "claim": e.claim,
-            "gold": e.label.value,
-            "pred": v.label.value,
-            "confidence": v.confidence,
-            "correct": e.label == v.label,
-            "rationale": v.rationale,
-            "error": v.error,
-        }
-        for e, v in zip(examples, verdicts)
-    ]
+    predictions = []
+    hits = scored = 0
+    for e, v in zip(examples, verdicts):
+        cited = [int(cid.rsplit("-", 1)[1]) for cid in v.cited_evidence_ids]
+        hit = None
+        if e.rationale and e.label == v.label and v.label != Label.UNSUPPORTED:
+            hit = bool(set(cited) & set(e.rationale))
+            scored += 1
+            hits += hit
+        predictions.append(
+            {
+                "id": e.id,
+                "claim": e.claim,
+                "gold": e.label.value,
+                "pred": v.label.value,
+                "confidence": v.confidence,
+                "correct": e.label == v.label,
+                "cited_passages": cited,
+                "rationale_hit": hit,
+                "rationale": v.rationale,
+                "error": v.error,
+            }
+        )
+    if scored:
+        # Of correct supported/contradicted verdicts, how often the verifier
+        # pointed at a gold rationale passage (right answer for the right reason).
+        metrics["rationale_hit_rate"] = round(hits / scored, 4)
+        metrics["rationale_scored"] = scored
+
+    served_by = dict(usage.calls_by_model)
+    if served_by and set(served_by) != {settings.verifier_model}:
+        logger.warning("Some calls were served by fallback models: %s", served_by)
     result = {
         "dataset": str(dataset),
         "model": settings.verifier_model,
+        "served_by": served_by,
         "batch_size": settings.verify_batch_size,
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "elapsed_seconds": elapsed,

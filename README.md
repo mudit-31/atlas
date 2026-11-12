@@ -10,6 +10,22 @@ Built on the **Gemini API** and **Tavily** search, and designed to run comfortab
 
 ---
 
+## Results
+
+All results were measured with `gemini-3.5-flash-lite`, fallbacks disabled. Full details, sources and caveats are in **[docs/results.md](docs/results.md)**.
+
+| Test | Result |
+|---|---|
+| SciFact (150 expert-labelled claims, 3 runs) | **82.0% ± 0.5% accuracy**, 0.832 macro-F1 |
+| Planted errors in 10 real web reports | **90.8%** of content errors caught (59/65), **0/55** false alarms |
+| Prompt injection (fake system override in a source) | attack success cut from **50% → 4%** by hardening |
+| Cross-claim injection inside a batch | **24.4% → 2.2%** |
+| Batching 12 claims per call vs 1 | **12× fewer calls**, no measured accuracy loss |
+| BM25 retrieval over 5,183 abstracts | gold abstract in top 4: **81.9%** |
+| Cost per report | 3 Gemini calls + 1 Tavily credit |
+
+---
+
 ## Architecture
 
 ```mermaid
@@ -22,7 +38,7 @@ flowchart TD
 
     SRC --> W
     subgraph G["2 · Report generation"]
-        W["Writer<br/><i>gemini-3.6-flash · 1 call</i>"] --> REP["Cited report<br/>Summary · Key Findings · Limitations"]
+        W["Writer<br/><i>gemini-3.5-flash-lite · 1 call</i>"] --> REP["Cited report<br/>Summary · Key Findings · Limitations"]
     end
 
     REP --> X
@@ -30,7 +46,7 @@ flowchart TD
         X["Claim extractor<br/><i>gemini-3.5-flash-lite · 1 call</i>"] --> CL["Atomic claims<br/>+ cited source ids"]
         SRC --> CH["Chunker"] --> BM["BM25 evidence retrieval<br/><i>local CPU · 0 calls</i>"]
         CL --> BM
-        BM --> J["Verifier<br/><i>gemini-3.6-flash · 1 call per 12 claims</i>"]
+        BM --> J["Verifier<br/><i>gemini-3.5-flash-lite · 1 call per 12 claims</i>"]
         J --> VD["Verdict per claim<br/>label · confidence · evidence · rationale"]
     end
 
@@ -161,10 +177,10 @@ Every setting can go in `.env`; see [.env.example](.env.example). The most usefu
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `ATLAS_WRITER_MODEL` | `gemini-3.6-flash` | Writes the report |
-| `ATLAS_VERIFIER_MODEL` | `gemini-3.6-flash` | Judges claims |
+| `ATLAS_WRITER_MODEL` | `gemini-3.5-flash-lite` | Writes the report |
+| `ATLAS_VERIFIER_MODEL` | `gemini-3.5-flash-lite` | Judges claims |
 | `ATLAS_EXTRACTOR_MODEL` | `gemini-3.5-flash-lite` | Splits the report into claims |
-| `ATLAS_FALLBACK_MODELS` | `gemini-3.5-flash-lite,gemini-2.5-flash-lite` | Used when a model is unavailable or out of quota |
+| `ATLAS_FALLBACK_MODELS` | `gemini-3.5-flash-lite,gemini-3.1-flash-lite` | Used when a model is unavailable or out of quota |
 | `ATLAS_THINKING_LEVEL` | *(model default)* | e.g. `low` for faster, cheaper Gemini 3 calls |
 | `GEMINI_RPM` | `10` | Client-side requests-per-minute cap |
 | `ATLAS_MAX_SOURCES` | `6` | Web sources per question |
@@ -178,7 +194,7 @@ CLI flags: `--no-cache`, `--max-sources N`, `--max-claims N`, `-v` for detailed 
 
 ## Benchmark data
 
-`data/benchmark/atlas_seed_v1.jsonl` holds 40 hand-labelled examples, 10 per label. They use **fictional** entities, so the verifier can only succeed by reading the evidence rather than recalling facts. The cases are deliberately tricky: transposed digits, founding city vs. current HQ, compound claims that are half supported, plausible inferences the evidence doesn't state, and reversed trends.
+`data/benchmark/atlas_seed_v1.jsonl` holds 40 synthetic examples, 10 per label, written with an AI assistant and not independently human-reviewed. It's a smoke test; the external SciFact benchmark in [docs/results.md](docs/results.md) is the real measure. They use **fictional** entities, so the verifier can only succeed by reading the evidence rather than recalling facts. The cases are deliberately tricky: transposed digits, founding city vs. current HQ, compound claims that are half supported, plausible inferences the evidence doesn't state, and reversed trends.
 
 To add your own data, write JSON Lines in the same format:
 
@@ -229,7 +245,8 @@ All tests use fake Gemini and Tavily clients, so they run offline in a few secon
 - [x] Evidence verification engine
 - [x] Seed benchmark dataset
 - [x] Evaluation framework
-- [ ] Larger benchmark (import FEVER / SciFact subsets, label real ATLAS reports)
+- [x] External benchmark (SciFact), planted-error and prompt-injection tests ([results](docs/results.md))
+- [ ] Human-labelled verdicts on real ATLAS reports
 - [ ] Follow-up searches for unsupported claims
 - [ ] Multi-agent planner that splits questions into sub-queries
 - [ ] Deployment

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import logging
 
 from pydantic import BaseModel
@@ -25,15 +26,32 @@ class _VerdictBatch(BaseModel):
     verdicts: list[_Verdict]
 
 
+DATA_BEGIN = "BEGIN_UNTRUSTED_DATA"
+DATA_END = "END_UNTRUSTED_DATA"
+
+
 def format_claims_for_verifier(items: list[tuple[Claim, list[Evidence]]]) -> str:
-    blocks = []
-    for claim, evidence in items:
-        cited = ", ".join(f"[{c}]" for c in claim.cited_sources) or "none"
-        lines = [f"### Claim {claim.id}", f"Claim: {claim.text}", f"Cited sources: {cited}", "Evidence:"]
-        for ev in evidence:
-            lines.append(f"[{ev.chunk_id}] (source {ev.source_id}) {ev.text}")
-        blocks.append("\n".join(lines))
-    return "\n\n".join(blocks)
+    """Serialise claims and evidence as a JSON array inside data markers.
+
+    JSON escaping means text inside a claim or passage (fake closing tags,
+    "system" headers, quotes) cannot break out of its field, and the markers
+    are stripped from the data so they cannot be spoofed.
+    """
+    def clean(text: str) -> str:
+        return text.replace(DATA_BEGIN, "").replace(DATA_END, "")
+
+    payload = [
+        {
+            "claim_id": claim.id,
+            "claim": clean(claim.text),
+            "cited_sources": claim.cited_sources,
+            "evidence": [
+                {"id": ev.chunk_id, "source": ev.source_id, "text": clean(ev.text)} for ev in evidence
+            ],
+        }
+        for claim, evidence in items
+    ]
+    return f"{DATA_BEGIN}\n{json.dumps(payload, ensure_ascii=False, indent=1)}\n{DATA_END}"
 
 
 def _no_evidence_verdict(claim: Claim) -> ClaimVerdict:

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import re
+import json
 
 import pytest
 
@@ -79,14 +79,18 @@ class FakeLLM:
             )
         if schema.__name__ == "_VerdictBatch":
             first_batch = sum(1 for kind, _ in self.calls if kind == "_VerdictBatch") == 1
+            data = json.loads(
+                prompt.split("BEGIN_UNTRUSTED_DATA", 1)[1].split("END_UNTRUSTED_DATA", 1)[0]
+            )
             verdicts = []
-            for cid, text in re.findall(r"### Claim (\S+)\nClaim: (.*)", prompt):
+            for item in data:
+                cid, text = item["claim_id"], item["claim"]
                 if self.drop_claim and self.drop_claim in text and first_batch:
                     continue
                 label, conf = next(
                     (v for k, v in CLAIM_LABELS.items() if k in text), ("unsupported", 0.5)
                 )
-                ids = re.findall(r"^\[(\S+)\]", prompt.split(f"### Claim {cid}\n", 1)[1], re.M)
+                ids = [e["id"] for e in item["evidence"]]
                 verdicts.append(
                     {
                         "claim_id": cid,

@@ -1,0 +1,800 @@
+{
+  "dataset": "data\\external\\scifact_dev_150.jsonl",
+  "model": "gemini-3.5-flash-lite",
+  "served_by": {
+    "gemini-3.5-flash-lite": 4
+  },
+  "batch_size": 12,
+  "created_at": "2026-11-08T17:18:36",
+  "elapsed_seconds": 13.15,
+  "usage": {
+    "llm_calls": 4,
+    "llm_cache_hits": 0,
+    "prompt_tokens": 35912,
+    "output_tokens": 4233,
+    "calls_by_model": {
+      "gemini-3.5-flash-lite": 4
+    },
+    "search_calls": 0,
+    "search_cache_hits": 0,
+    "search_credits": 0
+  },
+  "metrics": {
+    "n": 48,
+    "accuracy": 0.8125,
+    "macro_f1": 0.82,
+    "weighted_f1": 0.8215,
+    "per_class": {
+      "supported": {
+        "precision": 0.9091,
+        "recall": 0.8333,
+        "f1": 0.8696,
+        "support": 12
+      },
+      "partially_supported": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "unsupported": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 21
+      },
+      "contradicted": {
+        "precision": 0.7333,
+        "recall": 0.7333,
+        "f1": 0.7333,
+        "support": 15
+      }
+    },
+    "confusion_matrix": {
+      "supported": {
+        "supported": 10,
+        "partially_supported": 1,
+        "unsupported": 0,
+        "contradicted": 1
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "unsupported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 18,
+        "contradicted": 3
+      },
+      "contradicted": {
+        "supported": 1,
+        "partially_supported": 0,
+        "unsupported": 3,
+        "contradicted": 11
+      }
+    },
+    "problem_detection": {
+      "precision": 0.9722,
+      "recall": 0.9722,
+      "f1": 0.9722,
+      "support": 36
+    },
+    "calibration": {
+      "mean_conf_correct": 0.7179,
+      "mean_conf_wrong": 0.7556,
+      "accuracy_when_conf_ge_0_8": 0.8,
+      "share_conf_ge_0_8": 0.7292
+    },
+    "lenient": {
+      "n": 48,
+      "accuracy": 0.8333,
+      "macro_f1": 0.8357,
+      "weighted_f1": 0.8333,
+      "per_class": {
+        "supported": {
+          "precision": 0.9167,
+          "recall": 0.9167,
+          "f1": 0.9167,
+          "support": 12
+        },
+        "partially_supported": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "unsupported": {
+          "precision": 0.8571,
+          "recall": 0.8571,
+          "f1": 0.8571,
+          "support": 21
+        },
+        "contradicted": {
+          "precision": 0.7333,
+          "recall": 0.7333,
+          "f1": 0.7333,
+          "support": 15
+        }
+      },
+      "confusion_matrix": {
+        "supported": {
+          "supported": 11,
+          "partially_supported": 0,
+          "unsupported": 0,
+          "contradicted": 1
+        },
+        "partially_supported": {
+          "supported": 0,
+          "partially_supported": 0,
+          "unsupported": 0,
+          "contradicted": 0
+        },
+        "unsupported": {
+          "supported": 0,
+          "partially_supported": 0,
+          "unsupported": 18,
+          "contradicted": 3
+        },
+        "contradicted": {
+          "supported": 1,
+          "partially_supported": 0,
+          "unsupported": 3,
+          "contradicted": 11
+        }
+      },
+      "problem_detection": {
+        "precision": 0.9722,
+        "recall": 0.9722,
+        "f1": 0.9722,
+        "support": 36
+      }
+    },
+    "rationale_hit_rate": 1.0,
+    "rationale_scored": 21
+  },
+  "predictions": [
+    {
+      "id": "scifact-1221",
+      "claim": "The genomic aberrations found in matasteses are very similar to those found in the primary tumor.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence passages do not discuss whether genomic aberrations in metastases are similar to those in the primary tumor.",
+      "error": null
+    },
+    {
+      "id": "scifact-882",
+      "claim": "Omnivores produce less trimethylamine N-oxide from dietary I-carnitine than vegetarians.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that omnivorous human subjects produced more TMAO than did vegans or vegetarians, contradicting the claim.",
+      "error": null
+    },
+    {
+      "id": "scifact-385",
+      "claim": "Epigenetic modulating agents (EMAs) modulate antitumor immune response in a cancer model system.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence confirms that treatment in mouse models of NSCLC 'reverses tumor immune evasion and modulates T cell exhaustion state'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1298",
+      "claim": "Thigh-length graduated compression stockings (GCS) did not reduce deep vein thrombosis in patients admitted to hospital who are immobile because of acute stroke.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        12,
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that thigh-length GCS resulted in a non-significant absolute reduction in risk and 'do not lend support to the use of thigh-length GCS in patients admitted to hospital with acute stroke'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1180",
+      "claim": "The PRR MDA5 is a sensor of RNA virus infection.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that MDA5 plays 'a major role in pathogen sensing of RNA virus infection'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1197",
+      "claim": "The availability of safe places to study is not effective at decreasing homelessness.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "None of the evidence passages mention the availability of safe places to study or its effect on homelessness.",
+      "error": null
+    },
+    {
+      "id": "scifact-274",
+      "claim": "Combination nicotine replacement therapies with varenicline or bupropion lead to significantly higher long-term abstinence rates at 52 weeks than varenicline monotherapy.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that neither outcome 'was significantly different at 52 weeks'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1163",
+      "claim": "The DdrB protein from Deinococcus radiodurans is an alternative SSB.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3,
+        6,
+        7
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence characterizes DdrB as a single-stranded DNA binding protein (SSB) unique to Deinococcus spp. with functions related to standard SSB.",
+      "error": null
+    },
+    {
+      "id": "scifact-1232",
+      "claim": "The minor G allele of FOXO3 is related to more severe symptoms of Crohn's Disease.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        4
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the minor (G) allele is associated with a 'milder course of Crohn's disease', which contradicts the claim that it relates to more severe symptoms.",
+      "error": null
+    },
+    {
+      "id": "scifact-130",
+      "claim": "Articles published in open access format are more likely to be cited than traditional journals.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3,
+        11
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence provides robust evidence that open-access articles are more immediately recognized and cited than non-OA articles.",
+      "error": null
+    },
+    {
+      "id": "scifact-132",
+      "claim": "Aspirin inhibits the production of PGE2.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text mentions COX inhibitors and genetic ablation of COX, but does not state that aspirin inhibits PGE2 production.",
+      "error": null
+    },
+    {
+      "id": "scifact-516",
+      "claim": "High levels of CRP reduces the risk of exacerbations in chronic obstructive pulmonary disease (COPD).",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2,
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that elevated levels of inflammatory biomarkers like CRP are associated with an increased risk of exacerbations, not a reduced risk.",
+      "error": null
+    },
+    {
+      "id": "scifact-1213",
+      "claim": "The deregulated and prolonged activation of monocytes has deleterious effects in inflammatory diseases.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence passages do not discuss the activation of monocytes or its effects in inflammatory diseases.",
+      "error": null
+    },
+    {
+      "id": "scifact-903",
+      "claim": "PD-1 triggering on monocytes reduces IL-10 production by monocytes.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "Evidence states that triggering of PD-1 on monocytes 'induced IL-10 production', which contradicts the claim that it reduces IL-10 production.",
+      "error": null
+    },
+    {
+      "id": "scifact-1194",
+      "claim": "The arm density of TatAd complexes is due to structural rearrangements within Class1 TatAd complexes such as the 'charge zipper mechanism'.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses TatA complexes and charge zippers, but contains no mention of arm density or Class1 TatAd complexes.",
+      "error": null
+    },
+    {
+      "id": "scifact-208",
+      "claim": "CHEK2 is not associated with breast cancer.",
+      "gold": "supported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'Previous investigation has established a role for the CHEK2 gene in breast cancer aetiology', directly contradicting the claim.",
+      "error": null
+    },
+    {
+      "id": "scifact-508",
+      "claim": "Hematopoietic Stem Cell purification reaches purity rate of up to 50%.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions hematopoietic stem cells and sorting strategies, but does not state any purity rate of 50%.",
+      "error": null
+    },
+    {
+      "id": "scifact-1200",
+      "claim": "The binding orientation of the ML-SA1 activator at hTRPML2 is different from the binding orientation of the ML-SA1 activator at hTRPML1.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text only discusses hTRPML1 and does not mention hTRPML2 or the binding orientation of ML-SA1 at hTRPML2.",
+      "error": null
+    },
+    {
+      "id": "scifact-700",
+      "claim": "Localization of PIN1 in the Arabidopsis embryo does not require VPS9a",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The text discusses PIN polarity and endocytosis, but never mentions VPS9a.",
+      "error": null
+    },
+    {
+      "id": "scifact-48",
+      "claim": "A total of 1,000 people in the UK are asymptomatic carriers of vCJD infection.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence reports a prevalence of 493 per million from appendix samples, but does not state a total of 1,000 people.",
+      "error": null
+    },
+    {
+      "id": "scifact-831",
+      "claim": "NF2 (Merlin) prevents phosphorylation and subsequent cytoplasmic sequestration of YAP in Drosophila.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses the Hippo-YAP pathway and LKB1 in human cells, but does not mention NF2 (Merlin) or its role in Drosophila regarding YAP phosphorylation and cytoplasmic sequestration.",
+      "error": null
+    },
+    {
+      "id": "scifact-75",
+      "claim": "Active H. pylori urease has a polymeric structure that compromises two subunits, UreA and UreB.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence describes the structure of HpUreI, an inner-membrane urea channel, rather than the polymeric structure and subunits of H. pylori urease.",
+      "error": null
+    },
+    {
+      "id": "scifact-294",
+      "claim": "Crossover hot spots are not found within gene promoters in Saccharomyces cerevisiae.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses DNA double-strand breaks and DSB-hot regions in Saccharomyces cerevisiae, but does not address crossover hot spots within gene promoters.",
+      "error": null
+    },
+    {
+      "id": "scifact-560",
+      "claim": "Immune responses result in the development of inflammatory Th17 cells and anti-inflammatory iTregs.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses intestinal epithelial permeability, colitis, TGF-beta-producing CD4+ T cells, and IgA, but does not mention Th17 cells or iTregs.",
+      "error": null
+    },
+    {
+      "id": "scifact-913",
+      "claim": "PPAR-RXRs are inhibited by PPAR ligands.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "None of the provided evidence passages mention PPAR-RXRs or their inhibition by PPAR ligands.",
+      "error": null
+    },
+    {
+      "id": "scifact-1089",
+      "claim": "Smc5/6 engagment drives the activation of SUMO E3 ligase Mms21 by ATP-dependent remolding.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8,
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the Smc5/6 complex is physically remodeled in an ATP-dependent manner to promote sumoylation and coordinate with its SUMO ligase.",
+      "error": null
+    },
+    {
+      "id": "scifact-362",
+      "claim": "During the primary early antibody response activated B cells migrate toward the inner-and outer paracortical areas where oxysterol accumulation is generated by stromal cells.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions EBI2 guiding activated B cells to niches, but does not state that activated B cells migrate to the inner- and outer paracortical areas where oxysterols accumulate.",
+      "error": null
+    },
+    {
+      "id": "scifact-783",
+      "claim": "Mice without IFN-γ or its receptor are resistant to EAM induced with α-MyHC/CFA.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'IFN-gamma-deficient mice developed fatal autoimmune disease', which contradicts the claim that they are resistant.",
+      "error": null
+    },
+    {
+      "id": "scifact-1339",
+      "claim": "Ultrasound guidance significantly raises the number of traumatic procedures when attempting needle insertion.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that ultrasound imaging significantly reduced the risk of traumatic procedures, which is the opposite of raising the number of traumatic procedures.",
+      "error": null
+    },
+    {
+      "id": "scifact-1110",
+      "claim": "Suboptimal nutrition is not predictive of chronic disease",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence lists childhood undernutrition and diets high in sodium as major contributors to global DALYs, indicating that suboptimal nutrition is indeed predictive of chronic disease/burden.",
+      "error": null
+    },
+    {
+      "id": "scifact-249",
+      "claim": "Chenodeosycholic acid treatment reduces whole-body energy expenditure.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that 'Whole-body energy expenditure was also increased upon CDCA treatment,' contradicting the claim that it is reduced.",
+      "error": null
+    },
+    {
+      "id": "scifact-1196",
+      "claim": "The availability of safe places to study is effective at decreasing homelessness.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses mental health of homeless families after rehousing and local strategies, but never mentions safe places to study or their effectiveness at decreasing homelessness.",
+      "error": null
+    },
+    {
+      "id": "scifact-728",
+      "claim": "Ly6C hi monocytes have a lower inflammatory capacity than Ly6C lo monocytes.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence identifies monocyte subsets and their recruitment capacity, but does not compare the inflammatory capacity of Ly6C hi versus Ly6C lo monocytes.",
+      "error": null
+    },
+    {
+      "id": "scifact-410",
+      "claim": "Febrile seizures increase the threshold for development of epilepsy.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that hyperthermia-induced seizures cause a selective presynaptic increase in inhibitory synaptic transmission, which does not support the claim of increasing the threshold for epilepsy (and instead suggests enhanced alterations).",
+      "error": null
+    },
+    {
+      "id": "scifact-1270",
+      "claim": "The risk of male prisoners harming themselves is ten times that of female prisoners.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'Self-harm rates were more than ten times higher in female prisoners than in male inmates,' which contradicts the claim that male prisoners have ten times the risk of female prisoners.",
+      "error": null
+    },
+    {
+      "id": "scifact-781",
+      "claim": "Mice that lack Interferon-γ or its receptor exhibit high resistance to experimental autoimmune myocarditis.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3,
+        4
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that IFN-gamma receptor-deficient mice develop severe, persistent myocarditis with high mortality, meaning they are not resistant.",
+      "error": null
+    },
+    {
+      "id": "scifact-536",
+      "claim": "Hypocretin neurones induce panicprone state in rats.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'activation of ORX-synthesizing neurons is necessary for developing a panic-prone state in the rat panic model'.",
+      "error": null
+    },
+    {
+      "id": "scifact-879",
+      "claim": "Occupancy of ribosomes by IncRNAs do not make functional peptides.",
+      "gold": "contradicted",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        7
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence explicitly argues 'that the large majority of lincRNAs do not function through encoded proteins'.",
+      "error": null
+    },
+    {
+      "id": "scifact-960",
+      "claim": "Polymeal nutrition reduces cardiovascular mortality.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6,
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that the Polymeal reduces cardiovascular disease events and morbidity.",
+      "error": null
+    },
+    {
+      "id": "scifact-551",
+      "claim": "ITAM phosphorylation prevents the transfer of the T cell receptor (TCR) signal from the echo-domain to the cytoplasmic tail of the T cell receptor (TCR).",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided passages do not mention ITAM phosphorylation preventing the transfer of the TCR signal.",
+      "error": null
+    },
+    {
+      "id": "scifact-437",
+      "claim": "Functional consequences of genomic alterations due to Myelodysplastic syndrome (MDS) are poorly understood due to the lack of an animal model.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses gliomas and tumor-initiating cells rather than Myelodysplastic syndrome (MDS).",
+      "error": null
+    },
+    {
+      "id": "scifact-1273",
+      "claim": "The sliding activity of kinesin-8 protein Kip3 promotes bipolar spindle assembly.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that 'the sliding activity of Kip3 promotes bipolar spindle assembly'.",
+      "error": null
+    },
+    {
+      "id": "scifact-163",
+      "claim": "Bariatric surgery has a positive impact on mental health.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10,
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence confirms that bariatric surgery is associated with positive mental health outcomes such as lower rates and severity of depression.",
+      "error": null
+    },
+    {
+      "id": "scifact-269",
+      "claim": "Cold exposure reduces BAT recruitment.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions 'cold-induced atherosclerotic lesions' and thermogenesis in brown adipose tissue rather than cold exposure reducing BAT recruitment.",
+      "error": null
+    },
+    {
+      "id": "scifact-660",
+      "claim": "Ivermectin is used to treat onchocerciasis.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions onchocerciasis among neglected tropical diseases, but does not mention ivermectin.",
+      "error": null
+    },
+    {
+      "id": "scifact-578",
+      "claim": "In mouse models, the loss of CSF1R facilitates MOZ-TIF2-induced leuekmogenesis.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'induction of AML was suppressed in CSF1R-deficient mice', which contradicts that loss of CSF1R facilitates leukemogenesis.",
+      "error": null
+    },
+    {
+      "id": "scifact-324",
+      "claim": "Deleting Raptor reduces G-CSF levels.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses mTOR signaling and G-CSF regulation, but does not mention deleting Raptor.",
+      "error": null
+    },
+    {
+      "id": "scifact-1368",
+      "claim": "Vitamin D deficiency effects the term of delivery.",
+      "gold": "supported",
+      "pred": "partially_supported",
+      "confidence": 0.8,
+      "correct": false,
+      "cited_passages": [
+        10,
+        11
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence links vitamin D levels to pregnancy outcomes such as small for gestational age infants and birth weight, but the broad claim about 'term of delivery' is only partially addressed.",
+      "error": null
+    }
+  ]
+}

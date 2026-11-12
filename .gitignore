@@ -21,3 +21,6 @@ data/eval_runs/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Third-party datasets (download separately; see atlas/experiments/scifact.py)
+data/external/

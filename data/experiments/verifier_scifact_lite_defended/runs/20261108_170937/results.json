@@ -1,0 +1,2186 @@
+{
+  "dataset": "data\\external\\scifact_dev_150.jsonl",
+  "model": "gemini-3.5-flash-lite",
+  "served_by": {
+    "gemini-3.5-flash-lite": 13
+  },
+  "batch_size": 12,
+  "created_at": "2026-11-08T17:09:37",
+  "elapsed_seconds": 69.49,
+  "usage": {
+    "llm_calls": 13,
+    "llm_cache_hits": 0,
+    "prompt_tokens": 108929,
+    "output_tokens": 13516,
+    "calls_by_model": {
+      "gemini-3.5-flash-lite": 13
+    },
+    "search_calls": 0,
+    "search_cache_hits": 0,
+    "search_credits": 0
+  },
+  "metrics": {
+    "n": 150,
+    "accuracy": 0.8133,
+    "macro_f1": 0.8242,
+    "weighted_f1": 0.8242,
+    "per_class": {
+      "supported": {
+        "precision": 0.875,
+        "recall": 0.84,
+        "f1": 0.8571,
+        "support": 50
+      },
+      "partially_supported": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "unsupported": {
+        "precision": 0.7925,
+        "recall": 0.84,
+        "f1": 0.8155,
+        "support": 50
+      },
+      "contradicted": {
+        "precision": 0.8444,
+        "recall": 0.76,
+        "f1": 0.8,
+        "support": 50
+      }
+    },
+    "confusion_matrix": {
+      "supported": {
+        "supported": 42,
+        "partially_supported": 3,
+        "unsupported": 2,
+        "contradicted": 3
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "unsupported": {
+        "supported": 4,
+        "partially_supported": 0,
+        "unsupported": 42,
+        "contradicted": 4
+      },
+      "contradicted": {
+        "supported": 2,
+        "partially_supported": 1,
+        "unsupported": 9,
+        "contradicted": 38
+      }
+    },
+    "problem_detection": {
+      "precision": 0.949,
+      "recall": 0.93,
+      "f1": 0.9394,
+      "support": 100
+    },
+    "calibration": {
+      "mean_conf_correct": 0.8967,
+      "mean_conf_wrong": 0.9,
+      "accuracy_when_conf_ge_0_8": 0.8088,
+      "share_conf_ge_0_8": 0.9067
+    },
+    "lenient": {
+      "n": 150,
+      "accuracy": 0.8333,
+      "macro_f1": 0.8326,
+      "weighted_f1": 0.8326,
+      "per_class": {
+        "supported": {
+          "precision": 0.8654,
+          "recall": 0.9,
+          "f1": 0.8824,
+          "support": 50
+        },
+        "partially_supported": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "unsupported": {
+          "precision": 0.7925,
+          "recall": 0.84,
+          "f1": 0.8155,
+          "support": 50
+        },
+        "contradicted": {
+          "precision": 0.8444,
+          "recall": 0.76,
+          "f1": 0.8,
+          "support": 50
+        }
+      },
+      "confusion_matrix": {
+        "supported": {
+          "supported": 45,
+          "partially_supported": 0,
+          "unsupported": 2,
+          "contradicted": 3
+        },
+        "partially_supported": {
+          "supported": 0,
+          "partially_supported": 0,
+          "unsupported": 0,
+          "contradicted": 0
+        },
+        "unsupported": {
+          "supported": 4,
+          "partially_supported": 0,
+          "unsupported": 42,
+          "contradicted": 4
+        },
+        "contradicted": {
+          "supported": 3,
+          "partially_supported": 0,
+          "unsupported": 9,
+          "contradicted": 38
+        }
+      },
+      "problem_detection": {
+        "precision": 0.949,
+        "recall": 0.93,
+        "f1": 0.9394,
+        "support": 100
+      }
+    },
+    "rationale_hit_rate": 0.9375,
+    "rationale_scored": 80
+  },
+  "predictions": [
+    {
+      "id": "scifact-1221",
+      "claim": "The genomic aberrations found in matasteses are very similar to those found in the primary tumor.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "None of the provided evidence passages discuss the similarity of genomic aberrations between metastases and primary tumors.",
+      "error": null
+    },
+    {
+      "id": "scifact-882",
+      "claim": "Omnivores produce less trimethylamine N-oxide from dietary I-carnitine than vegetarians.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that \"Omnivorous human subjects produced more TMAO than did vegans or vegetarians\", which contradicts the claim that omnivores produce less.",
+      "error": null
+    },
+    {
+      "id": "scifact-385",
+      "claim": "Epigenetic modulating agents (EMAs) modulate antitumor immune response in a cancer model system.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that combination treatment with epigenetic modulating agents \"in mouse models of NSCLC reverses tumor immune evasion and modulates T cell exhaustion state\".",
+      "error": null
+    },
+    {
+      "id": "scifact-1298",
+      "claim": "Thigh-length graduated compression stockings (GCS) did not reduce deep vein thrombosis in patients admitted to hospital who are immobile because of acute stroke.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        12,
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence demonstrates that thigh-length GCS resulted in a non-significant reduction in DVT and data do not lend support to their use.",
+      "error": null
+    },
+    {
+      "id": "scifact-1180",
+      "claim": "The PRR MDA5 is a sensor of RNA virus infection.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that MDA5 plays a major role in \"pathogen sensing of RNA virus infection\".",
+      "error": null
+    },
+    {
+      "id": "scifact-1197",
+      "claim": "The availability of safe places to study is not effective at decreasing homelessness.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text does not contain information about the availability of safe places to study or their effectiveness at decreasing homelessness.",
+      "error": null
+    },
+    {
+      "id": "scifact-274",
+      "claim": "Combination nicotine replacement therapies with varenicline or bupropion lead to significantly higher long-term abstinence rates at 52 weeks than varenicline monotherapy.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that \"Neither outcome was significantly different at 52 weeks\", contradicting the claim of significantly higher rates at 52 weeks.",
+      "error": null
+    },
+    {
+      "id": "scifact-1163",
+      "claim": "The DdrB protein from Deinococcus radiodurans is an alternative SSB.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        3,
+        6
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence identifies DdrB as a single-stranded DNA binding protein unique to Deinococcus spp. that is structurally distinct from other single-stranded binding (SSB) proteins.",
+      "error": null
+    },
+    {
+      "id": "scifact-1232",
+      "claim": "The minor G allele of FOXO3 is related to more severe symptoms of Crohn's Disease.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        4
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the minor (G) allele is associated with a \"milder course of Crohn's disease\", contradicting the claim that it relates to more severe symptoms.",
+      "error": null
+    },
+    {
+      "id": "scifact-130",
+      "claim": "Articles published in open access format are more likely to be cited than traditional journals.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that \"open-access articles (OA articles) are more immediately recognized and cited than non-OA articles\".",
+      "error": null
+    },
+    {
+      "id": "scifact-132",
+      "claim": "Aspirin inhibits the production of PGE2.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The text discusses cyclooxygenases and prostaglandin E2, but does not mention aspirin inhibiting PGE2 production.",
+      "error": null
+    },
+    {
+      "id": "scifact-516",
+      "claim": "High levels of CRP reduces the risk of exacerbations in chronic obstructive pulmonary disease (COPD).",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that elevated levels of CRP were \"associated with increased risk of having exacerbations\", directly contradicting the claim that it reduces the risk.",
+      "error": null
+    },
+    {
+      "id": "scifact-1213",
+      "claim": "The deregulated and prolonged activation of monocytes has deleterious effects in inflammatory diseases.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence passages do not discuss monocytes or the effects of their prolonged activation.",
+      "error": null
+    },
+    {
+      "id": "scifact-903",
+      "claim": "PD-1 triggering on monocytes reduces IL-10 production by monocytes.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that triggering of PD-1 on monocytes 'induced IL-10 production', which contradicts the claim that it reduces IL-10 production.",
+      "error": null
+    },
+    {
+      "id": "scifact-1194",
+      "claim": "The arm density of TatAd complexes is due to structural rearrangements within Class1 TatAd complexes such as the 'charge zipper mechanism'.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses TatA complexes and charge zippers, but does not mention arm density or Class1 TatAd complexes.",
+      "error": null
+    },
+    {
+      "id": "scifact-208",
+      "claim": "CHEK2 is not associated with breast cancer.",
+      "gold": "supported",
+      "pred": "contradicted",
+      "confidence": 0.9,
+      "correct": false,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'Previous investigation has established a role for the CHEK2 gene in breast cancer aetiology', contradicting the claim that it is not associated.",
+      "error": null
+    },
+    {
+      "id": "scifact-508",
+      "claim": "Hematopoietic Stem Cell purification reaches purity rate of up to 50%.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence does not mention any purity rate percentage for Hematopoietic Stem Cell purification.",
+      "error": null
+    },
+    {
+      "id": "scifact-1200",
+      "claim": "The binding orientation of the ML-SA1 activator at hTRPML2 is different from the binding orientation of the ML-SA1 activator at hTRPML1.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence only discusses human TRPML1 and does not mention hTRPML2 or the binding orientation of ML-SA1 at hTRPML2.",
+      "error": null
+    },
+    {
+      "id": "scifact-700",
+      "claim": "Localization of PIN1 in the Arabidopsis embryo does not require VPS9a",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence does not mention VPS9a or its role in the localization of PIN1 in the Arabidopsis embryo.",
+      "error": null
+    },
+    {
+      "id": "scifact-48",
+      "claim": "A total of 1,000 people in the UK are asymptomatic carriers of vCJD infection.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence reports a prevalence of 493 per million from 32,441 appendix samples, but does not state a total of 1,000 asymptomatic carriers in the UK.",
+      "error": null
+    },
+    {
+      "id": "scifact-831",
+      "claim": "NF2 (Merlin) prevents phosphorylation and subsequent cytoplasmic sequestration of YAP in Drosophila.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses LKB1 and kinases associated with Hippo signaling, but does not mention NF2 (Merlin) preventing phosphorylation and cytoplasmic sequestration of YAP.",
+      "error": null
+    },
+    {
+      "id": "scifact-75",
+      "claim": "Active H. pylori urease has a polymeric structure that compromises two subunits, UreA and UreB.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses the urea channel HpUreI and mentions urease, but does not contain information on the polymeric structure or subunits UreA and UreB of active H. pylori urease.",
+      "error": null
+    },
+    {
+      "id": "scifact-294",
+      "claim": "Crossover hot spots are not found within gene promoters in Saccharomyces cerevisiae.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text discusses DSB mapping and hot spots, but does not address whether crossover hot spots are found within gene promoters in Saccharomyces cerevisiae.",
+      "error": null
+    },
+    {
+      "id": "scifact-560",
+      "claim": "Immune responses result in the development of inflammatory Th17 cells and anti-inflammatory iTregs.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses JAM-A, intestinal permeability, and TGF-beta-producing CD4+ T cells, but does not mention the development of Th17 and iTreg cells.",
+      "error": null
+    },
+    {
+      "id": "scifact-913",
+      "claim": "PPAR-RXRs are inhibited by PPAR ligands.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence passages do not mention PPAR-RXRs or their inhibition by PPAR ligands.",
+      "error": null
+    },
+    {
+      "id": "scifact-1089",
+      "claim": "Smc5/6 engagment drives the activation of SUMO E3 ligase Mms21 by ATP-dependent remolding.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8,
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the Smc5/6 complex coordinates with its SUMO ligase through physical remodeling of the molecule in an ATP-dependent manner.",
+      "error": null
+    },
+    {
+      "id": "scifact-362",
+      "claim": "During the primary early antibody response activated B cells migrate toward the inner-and outer paracortical areas where oxysterol accumulation is generated by stromal cells.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text does not mention the primary early antibody response or stromal cells generating oxysterol accumulation in paracortical areas.",
+      "error": null
+    },
+    {
+      "id": "scifact-783",
+      "claim": "Mice without IFN-γ or its receptor are resistant to EAM induced with α-MyHC/CFA.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'IFN-gamma-deficient mice developed fatal autoimmune disease', which contradicts that they are resistant to EAM.",
+      "error": null
+    },
+    {
+      "id": "scifact-1339",
+      "claim": "Ultrasound guidance significantly raises the number of traumatic procedures when attempting needle insertion.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that ultrasound imaging significantly *reduced* (rather than raised) the risk of traumatic procedures.",
+      "error": null
+    },
+    {
+      "id": "scifact-1110",
+      "claim": "Suboptimal nutrition is not predictive of chronic disease",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence lists childhood undernutrition and diets high in sodium as major contributors to global DALYs, contradicting the claim that suboptimal nutrition is not predictive of chronic disease/burden.",
+      "error": null
+    },
+    {
+      "id": "scifact-249",
+      "claim": "Chenodeosycholic acid treatment reduces whole-body energy expenditure.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'Whole-body energy expenditure was also increased upon CDCA treatment', which contradicts a reduction.",
+      "error": null
+    },
+    {
+      "id": "scifact-1196",
+      "claim": "The availability of safe places to study is effective at decreasing homelessness.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence discusses mental health needs of homeless children and families and rehousing, but does not mention safe places to study or decreasing homelessness.",
+      "error": null
+    },
+    {
+      "id": "scifact-728",
+      "claim": "Ly6C hi monocytes have a lower inflammatory capacity than Ly6C lo monocytes.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence distinguishes mouse monocyte subsets based on Ly-6C expression and recruitment, but does not compare their inflammatory capacities to state that Ly6C hi have lower capacity.",
+      "error": null
+    },
+    {
+      "id": "scifact-410",
+      "claim": "Febrile seizures increase the threshold for development of epilepsy.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence notes that febrile seizures cause a 'presynaptic increase in inhibitory synaptic transmission in the hippocampus', rather than increasing the threshold for epilepsy.",
+      "error": null
+    },
+    {
+      "id": "scifact-1270",
+      "claim": "The risk of male prisoners harming themselves is ten times that of female prisoners.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that self-harm rates were 'more than ten times higher in female prisoners than in male inmates', which contradicts the claim that male prisoners' risk is ten times that of females.",
+      "error": null
+    },
+    {
+      "id": "scifact-781",
+      "claim": "Mice that lack Interferon-γ or its receptor exhibit high resistance to experimental autoimmune myocarditis.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3,
+        4
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that IFN-gamma receptor-deficient mice develop severe myocarditis with high mortality and persistent disease, showing they are not resistant.",
+      "error": null
+    },
+    {
+      "id": "scifact-536",
+      "claim": "Hypocretin neurones induce panicprone state in rats.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'activation of ORX-synthesizing neurons is necessary for developing a panic-prone state in the rat panic model'.",
+      "error": null
+    },
+    {
+      "id": "scifact-879",
+      "claim": "Occupancy of ribosomes by IncRNAs do not make functional peptides.",
+      "gold": "contradicted",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        7
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'the large majority of lincRNAs do not function through encoded proteins'.",
+      "error": null
+    },
+    {
+      "id": "scifact-960",
+      "claim": "Polymeal nutrition reduces cardiovascular mortality.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6,
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that the Polymeal reduces cardiovascular disease events and morbidity.",
+      "error": null
+    },
+    {
+      "id": "scifact-551",
+      "claim": "ITAM phosphorylation prevents the transfer of the T cell receptor (TCR) signal from the echo-domain to the cytoplasmic tail of the T cell receptor (TCR).",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "None of the provided evidence mentions ITAM phosphorylation preventing the transfer of the TCR signal.",
+      "error": null
+    },
+    {
+      "id": "scifact-437",
+      "claim": "Functional consequences of genomic alterations due to Myelodysplastic syndrome (MDS) are poorly understood due to the lack of an animal model.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided passages discuss gliomas and human-induced pluripotent stem cells, but do not mention Myelodysplastic syndrome (MDS).",
+      "error": null
+    },
+    {
+      "id": "scifact-1273",
+      "claim": "The sliding activity of kinesin-8 protein Kip3 promotes bipolar spindle assembly.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that 'the sliding activity of Kip3 promotes bipolar spindle assembly'.",
+      "error": null
+    },
+    {
+      "id": "scifact-163",
+      "claim": "Bariatric surgery has a positive impact on mental health.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10,
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence supports a positive impact on mental health, citing lower rates of depression postoperatively.",
+      "error": null
+    },
+    {
+      "id": "scifact-269",
+      "claim": "Cold exposure reduces BAT recruitment.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses UCP1 in brown adipose tissue (BAT) and cold-induced effects, but cold exposure stimulates/activates rather than reduces BAT recruitment/thermogenesis.",
+      "error": null
+    },
+    {
+      "id": "scifact-660",
+      "claim": "Ivermectin is used to treat onchocerciasis.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided passages mention onchocerciasis as a neglected tropical disease but do not state that ivermectin is used to treat it.",
+      "error": null
+    },
+    {
+      "id": "scifact-578",
+      "claim": "In mouse models, the loss of CSF1R facilitates MOZ-TIF2-induced leuekmogenesis.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'induction of AML was suppressed in CSF1R-deficient mice', which means the loss of CSF1R suppresses rather than facilitates leukemogenesis.",
+      "error": null
+    },
+    {
+      "id": "scifact-324",
+      "claim": "Deleting Raptor reduces G-CSF levels.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text discusses mTOR signalling and G-CSF regulation, but does not mention Raptor or deleting Raptor.",
+      "error": null
+    },
+    {
+      "id": "scifact-1368",
+      "claim": "Vitamin D deficiency effects the term of delivery.",
+      "gold": "supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": false,
+      "cited_passages": [
+        10,
+        11
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence shows vitamin D levels affect pregnancy outcomes and birth variables, but does not specifically confirm an effect on the exact 'term of delivery'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1150",
+      "claim": "Tetraspanin-3 is a causative factor in the development of acute myelogenous leukemia",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly identifies Tspan3 as 'an important regulator of aggressive leukemias and highlight a role for Tspan3 in oncogenesis'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1144",
+      "claim": "Taxation of sugar-sweetened beverages had no effect on the incidence rate of type II diabetes in India.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the 20% SSB tax was anticipated to reduce 'type 2 diabetes incidence by 1.6%', contradicting the claim that it had no effect.",
+      "error": null
+    },
+    {
+      "id": "scifact-693",
+      "claim": "Leuko-reduced blood reduces infectious complications in red blood cell transfusion.",
+      "gold": "supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": false,
+      "cited_passages": [
+        11
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence notes decreased mortality, fever episodes, and antibiotic use, but states that serious nosocomial infections did not decrease.",
+      "error": null
+    },
+    {
+      "id": "scifact-1137",
+      "claim": "TNFAIP3 is a tumor suppressor in glioblastoma.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'our data suggest A20 may function as a tumor enhancer in glioma through promotion of GSC survival', which contradicts it being a tumor suppressor.",
+      "error": null
+    },
+    {
+      "id": "scifact-1241",
+      "claim": "The myocardial lineage develops from cardiac progenitors of mesodermal origin.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1,
+        2
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence confirms that the functional heart is comprised of mesoderm-derived lineages that develop from common cardiovascular progenitors.",
+      "error": null
+    },
+    {
+      "id": "scifact-820",
+      "claim": "N-terminal cleavage increases success identifying transcription start sites.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence passages do not discuss N-terminal cleavage or its effect on identifying transcription start sites.",
+      "error": null
+    },
+    {
+      "id": "scifact-233",
+      "claim": "Cell autonomous sex determination in somatic cells does not occur in Galliformes.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'in birds, sexual differentiation is substantively cell autonomous', directly contradicting the claim.",
+      "error": null
+    },
+    {
+      "id": "scifact-956",
+      "claim": "Pleiotropic coupling of GLP-1R to intracellular effectors promotes distinct profiles of cellular signaling.",
+      "gold": "unsupported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        6
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'peptide agonists can engage different elements of the receptor extracellular face to achieve effector coupling and biased signaling'.",
+      "error": null
+    },
+    {
+      "id": "scifact-501",
+      "claim": "Headaches are not correlated with cognitive impairment.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        13,
+        16
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that 'Evidence was lacking for cognitive impairment for any headache type'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1021",
+      "claim": "Rapid up-regulation and higher basal expression of interferon-induced genes reduce survival of granule cell neurons that are infected by West Nile virus.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The text discusses differential permissivity and innate immune programs, but does not state that these factors reduce survival of granule cell neurons infected by West Nile virus.",
+      "error": null
+    },
+    {
+      "id": "scifact-94",
+      "claim": "Albendazole is used to treat lymphatic filariasis.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions lymphatic filariasis as a neglected tropical disease, but never mentions albendazole.",
+      "error": null
+    },
+    {
+      "id": "scifact-148",
+      "claim": "Autophagy declines in aged organisms.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states directly that 'CMA activity declines in aged organisms'.",
+      "error": null
+    },
+    {
+      "id": "scifact-1303",
+      "claim": "Tirasemtiv has no effect on fast-twitch muscle.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence passages do not mention or discuss tirasemtiv.",
+      "error": null
+    },
+    {
+      "id": "scifact-887",
+      "claim": "Only a minority of cells survive development after differentiation into stress-resistant spores.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence does not provide information about the survival rate of cells developing into spores.",
+      "error": null
+    },
+    {
+      "id": "scifact-775",
+      "claim": "Mice defective for deoxyribonucleic acid (DNA) polymerase I (polI) reveal increased sensitivity to ionizing radiation (IR).",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses DNA polymerases mu, lambda, and TdT, but not DNA polymerase I or its sensitivity to ionizing radiation.",
+      "error": null
+    },
+    {
+      "id": "scifact-793",
+      "claim": "Mitochondria are uninvolved in apoptosis.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence directly contradicts the claim, stating that mitochondria 'participate in intermediary metabolism, calcium signaling, and apoptosis.'",
+      "error": null
+    },
+    {
+      "id": "scifact-50",
+      "claim": "AIRE is expressed in some skin tumors.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'autoimmune regulator (Aire)... is inducibly expressed in human and mouse tumor keratinocytes'.",
+      "error": null
+    },
+    {
+      "id": "scifact-539",
+      "claim": "Hypoglycemia increases the risk of dementia.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        12
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence concludes that 'a history of severe hypoglycemic episodes was associated with a greater risk of dementia.'",
+      "error": null
+    },
+    {
+      "id": "scifact-219",
+      "claim": "CX3CR1 on the Th2 cells suppresses airway inflammation.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": false,
+      "rationale": "The evidence states that 'CX3CR1 signaling promoted T(H)2 survival in the inflamed lungs', indicating a promoting role rather than suppression.",
+      "error": null
+    },
+    {
+      "id": "scifact-1272",
+      "claim": "The single flash-evoked ERG b-wave is generated by activity of ON-bipolar cells.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence does not mention the flash-evoked ERG b-wave.",
+      "error": null
+    },
+    {
+      "id": "scifact-1370",
+      "claim": "Vitamin D deficiency is unrelated to birth weight.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that low levels were associated with 'lower birth weight infants', contradicting the claim that it is unrelated.",
+      "error": null
+    },
+    {
+      "id": "scifact-859",
+      "claim": "Normal expression of RUNX1 has tumor-promoting effects.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        4
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence predicts 'a tumor-suppressor role for RUNX1', which contradicts the claim that normal expression has tumor-promoting effects.",
+      "error": null
+    },
+    {
+      "id": "scifact-718",
+      "claim": "Low nucleosome occupancy correlates with low methylation levels across species.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence does not compare methylation levels across species in relation to nucleosome occupancy levels.",
+      "error": null
+    },
+    {
+      "id": "scifact-1199",
+      "claim": "The benefits of colchicine were achieved with effective widespread use of secondary prevention strategies such as high-dose statins.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text contains no mention of colchicine.",
+      "error": null
+    },
+    {
+      "id": "scifact-115",
+      "claim": "Anthrax spores can be disposed of easily after they are dispersed.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence discusses anthrax spore contamination and reaerosolization under various conditions, but does not state that spores can be disposed of easily.",
+      "error": null
+    },
+    {
+      "id": "scifact-212",
+      "claim": "CR is associated with higher methylation age.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        4
+      ],
+      "rationale_hit": true,
+      "rationale": "Evidence 4 shows that caloric restriction is associated with attenuation of age-related methylation drift such that blood methylation age appeared younger, contradicting the claim that it is associated with higher methylation age.",
+      "error": null
+    },
+    {
+      "id": "scifact-743",
+      "claim": "Macrolides protect against myocardial infarction.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "Evidence 9 explicitly states that \"No effect was found for previous use of macrolides\", directly contradicting the claim that they protect against myocardial infarction.",
+      "error": null
+    },
+    {
+      "id": "scifact-1086",
+      "claim": "Sildenafil improves erectile function in men who experience sexual dysfunction as a result of the use of SSRI antidepressants.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10
+      ],
+      "rationale_hit": true,
+      "rationale": "Evidence 10 concludes that \"sildenafil effectively improved erectile function... in men with sexual dysfunction associated with the use of SRI antidepressants.\"",
+      "error": null
+    },
+    {
+      "id": "scifact-1019",
+      "claim": "Rapid phosphotransfer rates govern fidelity in two component systems",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        7
+      ],
+      "rationale_hit": false,
+      "rationale": "Evidence 7 mentions \"rapid phosphotransfer from CheA(3)-P\" and discusses how specificity allows protein interaction and rapid phosphotransfer in two-component systems.",
+      "error": null
+    },
+    {
+      "id": "scifact-124",
+      "claim": "Antiretroviral therapy reduces rates of tuberculosis across a broad range of CD4 strata.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        11
+      ],
+      "rationale_hit": true,
+      "rationale": "Evidence 11 concludes that \"Antiretroviral therapy is strongly associated with a reduction in the incidence of tuberculosis across all CD4 count strata.\"",
+      "error": null
+    },
+    {
+      "id": "scifact-554",
+      "claim": "Immune complex triggered cell death leads to extracellular release of neutrophil protein HMGB1.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence describes ribonucleoprotein immune complexes inducing NETosis and mitochondrial ROS involvement, but does not mention the extracellular release of neutrophil protein HMGB1.",
+      "error": null
+    },
+    {
+      "id": "scifact-834",
+      "claim": "NOX2-independent pathways can generate peroxynitrite by reacting with nitrogen intermediates.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text mentions MDSCs inducing nitration through hyperproduction of reactive oxygen species and peroxynitrite, but does not state that NOX2-independent pathways can generate peroxynitrite.",
+      "error": null
+    },
+    {
+      "id": "scifact-513",
+      "claim": "High cardiopulmonary fitness causes increased mortality rate.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": false,
+      "rationale": "Evidence 2 states that \"low cardiorespiratory fitness, is an established risk factor for cardiovascular disease (CVD) morbidity and mortality\", which contradicts the claim that high cardiopulmonary fitness causes increased mortality.",
+      "error": null
+    },
+    {
+      "id": "scifact-514",
+      "claim": "High dietary calcium intakes are unnecessary for prevention of secondary hyperparathyroidism in subjects with 25(OH)D levels above 75 nmol/liter.",
+      "gold": "unsupported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        9
+      ],
+      "rationale_hit": null,
+      "rationale": "Evidence 9 states: \"As long as vitamin D status is ensured, calcium intake levels of more than 800 mg/d may be unnecessary for maintaining calcium metabolism.\"",
+      "error": null
+    },
+    {
+      "id": "scifact-57",
+      "claim": "APOE4 expression in iPSC-derived neurons increases AlphaBeta production and tau phosphorylation, delaying GABA neuron degeneration.",
+      "gold": "contradicted",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": false,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "Evidence 2 supports that ApoE4 increases tau phosphorylation and Aβ production and leads to GABAergic neuron degeneration, but it states the neurons display degeneration rather than a delay in it.",
+      "error": null
+    },
+    {
+      "id": "scifact-845",
+      "claim": "Neutrophil extracellular traps (NETs) are released by ANCA-stimulated neutrophils.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": true,
+      "rationale": "Evidence 2 explicitly states that \"neutrophil extracellular traps (NETs), are released by ANCA-stimulated neutrophils\".",
+      "error": null
+    },
+    {
+      "id": "scifact-1099",
+      "claim": "Statins decrease blood cholesterol.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence passages do not mention statins.",
+      "error": null
+    },
+    {
+      "id": "scifact-415",
+      "claim": "Female carriers of the Apolipoprotein E4 (APOE4) allele have increased risk for dementia.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the \"Risk of dementia associated with a longer reproductive period was most pronounced in APOE epsilon4 carriers\" among women.",
+      "error": null
+    },
+    {
+      "id": "scifact-1385",
+      "claim": "cSMAC formation enhances weak ligand signalling.",
+      "gold": "supported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that \"enhancing cSMAC formation reduced stimulatory capacity of the weak peptide,\" which contradicts the claim that it enhances it.",
+      "error": null
+    },
+    {
+      "id": "scifact-1274",
+      "claim": "The tip of the inner tube of the toxic type VI secretion system (T6SS) antibacterial effector in Escherichia coli (E. coli) carries toxic effector proteins.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5,
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence indicates that effector domains are attached to the VgrG spike on the T6SS organelle which acts as the tip.",
+      "error": null
+    },
+    {
+      "id": "scifact-1319",
+      "claim": "Transplanted human glial cells can differentiate within the host animal.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that engrafted human glial progenitor cells matured and exhibited large numbers of both human glial progenitors and astrocytes in the recipient brains.",
+      "error": null
+    },
+    {
+      "id": "scifact-239",
+      "claim": "Cellular aging closely links to an older appearance.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        11,
+        12
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that perceived age is a robust biomarker of aging that correlates with physical and cognitive functioning and molecular aging phenotypes.",
+      "error": null
+    },
+    {
+      "id": "scifact-298",
+      "claim": "Cytochrome c is released from the mitochondrial intermembrane space to cytosol during apoptosis.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that apoptosis via the mitochondrial pathway involves the release of cytochrome c from the mitochondrial intermembrane space.",
+      "error": null
+    },
+    {
+      "id": "scifact-837",
+      "claim": "NR5A2 is important in development of endometrial tissues.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8,
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that NR5A2 is expressed in the endometrium and is necessary for promotion of decidualization.",
+      "error": null
+    },
+    {
+      "id": "scifact-128",
+      "claim": "Arterioles have a larger lumen diameter than venules.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text mentions arterioles and venules as part of an angiogenic response but does not compare their lumen diameters.",
+      "error": null
+    },
+    {
+      "id": "scifact-171",
+      "claim": "Basophils counteract disease development in patients with systemic lupus erythematosus (SLE).",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that basophils and IgE autoantibodies amplify autoantibody production leading to lupus nephritis, rather than counteracting disease development.",
+      "error": null
+    },
+    {
+      "id": "scifact-517",
+      "claim": "High levels of copeptin decrease risk of diabetes.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses NT-pro-BNP and BNP levels in relation to diabetes risk, but does not mention copeptin.",
+      "error": null
+    },
+    {
+      "id": "scifact-1020",
+      "claim": "Rapid up-regulation and higher basal expression of interferon-induced genes increase survival of granule cell neurons that are infected by West Nile virus.",
+      "gold": "supported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions innate immune programs and ISGs providing antiviral effects, but does not state that they increase survival of granule cell neurons specifically infected by West Nile virus.",
+      "error": null
+    },
+    {
+      "id": "scifact-1024",
+      "claim": "Recurrent mutations occur frequently within CTCF anchor sites adjacent to oncogenes.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that CTCF anchor regions 'are a frequent site of mutations in cancer cells'.",
+      "error": null
+    },
+    {
+      "id": "scifact-721",
+      "claim": "Lupus-prone mice infected with curliproducing bacteria have higher autoantibody titers compared to controls.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence confirms that 'infection of lupus-prone mice with curli-producing bacteria triggered higher autoantibody titers'.",
+      "error": null
+    },
+    {
+      "id": "scifact-852",
+      "claim": "Non-invasive ventilation use should be decreased if there is inadequate response to conventional treatment.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text discusses the cost-effectiveness and mortality outcomes of non-invasive ventilation, but does not state that its use should be decreased upon inadequate response.",
+      "error": null
+    },
+    {
+      "id": "scifact-598",
+      "claim": "Incidence rates of cervical cancer have increased due to nationwide screening programs based primarily on cytology to detect uterine cervical cancer.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        7
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'Incidence and mortality rates have declined', which contradicts the claim that incidence rates have increased.",
+      "error": null
+    },
+    {
+      "id": "scifact-1",
+      "claim": "0-dimensional biomaterials show inductive properties.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence text mentions nanotechnologies and stem cell tracking/differentiation, but does not mention 0-dimensional biomaterials or inductive properties.",
+      "error": null
+    },
+    {
+      "id": "scifact-1352",
+      "claim": "Upregulation of mosGCTL-1 is induced upon infection with West Nile virus.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": false,
+      "rationale": "The evidence states that 'mosGCTL-1, is induced by WNV'.",
+      "error": null
+    },
+    {
+      "id": "scifact-491",
+      "claim": "HNF4A mutations can cause diabetes in mutant carriers by the age of 14 years",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions studying heterozygous mutations in HNF4A and its role in pancreatic insulin secretion, but contains no information about diabetes onset by the age of 14 years.",
+      "error": null
+    },
+    {
+      "id": "scifact-1320",
+      "claim": "Transplanted human glial progenitor cells are incapable of forming a neural network with host animals' neurons.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        4
+      ],
+      "rationale_hit": false,
+      "rationale": "The evidence states that 'engrafted human glia were gap-junction-coupled to host astroglia', contradicting the claim that they are incapable of forming a network.",
+      "error": null
+    },
+    {
+      "id": "scifact-216",
+      "claim": "CX3CR1 on the Th2 cells impairs T cell survival",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'CX3CR1 signaling promoted T(H)2 survival', which is the opposite of impairing survival.",
+      "error": null
+    },
+    {
+      "id": "scifact-386",
+      "claim": "Errors in peripheral IV drug administration are most common during bolus administration and multiple-step medicine preparations.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'Most errors occurred when giving bolus doses or making up drugs that required multiple step preparation.'",
+      "error": null
+    },
+    {
+      "id": "scifact-1382",
+      "claim": "aPKCz causes tumour enhancement by affecting glutamine metabolism.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that PKCζ is a 'metabolic tumor suppressor' rather than causing tumour enhancement.",
+      "error": null
+    },
+    {
+      "id": "scifact-1290",
+      "claim": "There is an inverse relationship between hip fractures and statin use.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that use of statins was 'associated with a significant reduction in the risk of hip fracture', demonstrating an inverse relationship.",
+      "error": null
+    },
+    {
+      "id": "scifact-1359",
+      "claim": "Varenicline monotherapy is more effective after 12 weeks of treatment compared to combination nicotine replacement therapies with varenicline or bupropion.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        9
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that combination therapy achieved significantly higher prolonged abstinence at 12 weeks compared to varenicline monotherapy.",
+      "error": null
+    },
+    {
+      "id": "scifact-268",
+      "claim": "Cold exposure increases BAT recruitment.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions thermogenesis in brown adipose tissue (BAT) and UCP1, but does not state that cold exposure increases BAT recruitment.",
+      "error": null
+    },
+    {
+      "id": "scifact-314",
+      "claim": "Deamination of cytidine to uridine on the minus strand of viral DNA results in catastrophic G-to-A mutations in the viral genome.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence demonstrates that APOBEC3G triggers G-to-A hypermutation in nascent retroviral DNA during reverse transcription.",
+      "error": null
+    },
+    {
+      "id": "scifact-811",
+      "claim": "Mutant mice lacking SVCT2 have greatly increased ascorbic acid levels in both brain and adrenals.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that ascorbic-acid levels were undetectable or markedly reduced, not greatly increased.",
+      "error": null
+    },
+    {
+      "id": "scifact-1041",
+      "claim": "Replacement of histone H2A with H2A.Z slows gene activation in yeasts by stabilizing +1 nucleosomes.",
+      "gold": "contradicted",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence passages discuss H3.3 and H2A.Z nucleosome stability in vertebrates, but do not mention gene activation or slowing gene activation in yeasts.",
+      "error": null
+    },
+    {
+      "id": "scifact-800",
+      "claim": "Modifying the epigenome in the brain affects the normal human aging process by affecting certain genes related to neurogenesis.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions brain epigenomes providing insights into neural development, disease, and aging, but does not address modifying the epigenome or neurogenesis genes specifically.",
+      "error": null
+    },
+    {
+      "id": "scifact-1259",
+      "claim": "The relationship between a breast cancer patient's capacity to metabolize tamoxifen and treatment outcome is dependent on the patient's genetic make-up.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        14
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows an association between CYP2D6 variation (genetic make-up) and clinical outcomes in patients treated with tamoxifen.",
+      "error": null
+    },
+    {
+      "id": "scifact-821",
+      "claim": "N-terminal cleavage reduces success identifying transcription start sites.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses amino-terminal acetylation and the (X)PX rule, but does not mention transcription start sites or N-terminal cleavage.",
+      "error": null
+    },
+    {
+      "id": "scifact-146",
+      "claim": "Autologous transplantation of mesenchymal stem cells has lower rates of rejection than induction therapy with anti-interleukin-2 receptor antibodies.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        9,
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that autologous MSCs compared to anti-IL-2 receptor antibody induction resulted in a lower incidence of acute rejection.",
+      "error": null
+    },
+    {
+      "id": "scifact-922",
+      "claim": "Patients in stable partnerships have a faster progression from HIV to AIDS.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that a stable partnership is associated with a slower rate of progression to AIDS or death, not a faster one.",
+      "error": null
+    },
+    {
+      "id": "scifact-5",
+      "claim": "1/2000 in UK have abnormal PrP positivity.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence reports 16 positive appendix samples out of 32,441, which corresponds to an overall prevalence of 493 per million (approximately 1 in 2000).",
+      "error": null
+    },
+    {
+      "id": "scifact-185",
+      "claim": "Breast cancer development is determined exclusively by genetic factors.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1,
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence investigates the combined effects of genetic susceptibility and environmental factors, indicating breast cancer is not determined exclusively by genetics.",
+      "error": null
+    },
+    {
+      "id": "scifact-1335",
+      "claim": "UCB T cells maintain high TCR diversity after transplantation.",
+      "gold": "supported",
+      "pred": "unsupported",
+      "confidence": 0.9,
+      "correct": false,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that cord blood-graft recipients approximated healthy TCR diversity, but does not state that UCB T cells maintain high TCR diversity after transplantation.",
+      "error": null
+    },
+    {
+      "id": "scifact-238",
+      "claim": "Cells undergoing methionine restriction may activate miRNAs.",
+      "gold": "unsupported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        1,
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that miRNAs are instrumental in stress responses and 'may become activators of expression during stress'.",
+      "error": null
+    },
+    {
+      "id": "scifact-723",
+      "claim": "Ly49Q directs the organization of neutrophil migration to inflammation sites by regulating membrane raft functions.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6,
+        7
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence confirms that Ly49Q regulates neutrophil polarization and migration through the regulation of membrane raft functions.",
+      "error": null
+    },
+    {
+      "id": "scifact-183",
+      "claim": "Bone marrow cells contribute to adult macrophage compartments.",
+      "gold": "contradicted",
+      "pred": "supported",
+      "confidence": 0.9,
+      "correct": false,
+      "cited_passages": [
+        4,
+        5
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence demonstrates that host/bone marrow-derived macrophages contribute and expand following transplantation.",
+      "error": null
+    },
+    {
+      "id": "scifact-533",
+      "claim": "Hyperfibrinogenemia increases rates of femoropopliteal bypass thrombosis.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10,
+        12
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that plasma fibrinogen concentration is a key variable predicting graft occlusion and higher concentrations lead to lower patency rates (thrombosis).",
+      "error": null
+    },
+    {
+      "id": "scifact-1389",
+      "claim": "mTORC2 regulates intracellular cysteine levels through xCT inhibition.",
+      "gold": "supported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        2,
+        3
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence shows that mTORC2 inhibits xCT via phosphorylation, rather than regulating intracellular cysteine levels through xCT inhibition.",
+      "error": null
+    },
+    {
+      "id": "scifact-213",
+      "claim": "CRP is not predictive of postoperative mortality following Coronary Artery Bypass Graft (CABG) surgery.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided evidence discusses cost-effectiveness and prioritisation models based on cardiovascular events and estimated glomerular filtration rate, but does not address postoperative mortality following CABG surgery in relation to CRP.",
+      "error": null
+    },
+    {
+      "id": "scifact-649",
+      "claim": "Integrating classroom-based collaborative learning with Web-based collaborative learning leads to subpar class performance",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses the benefits and implementation of computer-assisted learning in medical education but does not mention the performance effects of integrating classroom-based and Web-based collaborative learning.",
+      "error": null
+    },
+    {
+      "id": "scifact-870",
+      "claim": "Obesity decreases life quality.",
+      "gold": "unsupported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        12
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence notes that higher BMI reduces median survival by several years, supporting the claim that obesity negatively impacts life quality/duration.",
+      "error": null
+    },
+    {
+      "id": "scifact-338",
+      "claim": "Dexamethasone decreases risk of postoperative bleeding.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        16
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that dexamethasone 'was associated with an increased risk of postoperative bleeding', which contradicts the claim.",
+      "error": null
+    },
+    {
+      "id": "scifact-716",
+      "claim": "Low expression of miR7a exerts a biological function in testis.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The provided text discusses miR-122 target abundance and ceRNA effects in hepatocytes and livers, but contains no information regarding low expression of miR7a in the testis.",
+      "error": null
+    },
+    {
+      "id": "scifact-674",
+      "claim": "LDL cholesterol has no involvement in the development of cardiovascular disease.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that 'LDL cholesterol has a causal role in the development of cardiovascular disease', directly contradicting the claim.",
+      "error": null
+    },
+    {
+      "id": "scifact-770",
+      "claim": "Metastatic colorectal cancer treated with a single agent fluoropyrimidines resulted in reduced efficacy and lower quality of life when compared with oxaliplatin-based chemotherapy in elderly patients.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        17
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that \"a combination including oxaliplatin was preferable to single-agent fluoropyrimidines\" for elderly and frail patients with advanced colorectal cancer.",
+      "error": null
+    },
+    {
+      "id": "scifact-641",
+      "claim": "Insomnia can be effectively treated with cognitive behavioral therapy.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        8,
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence confirms that CBT results in improved outcomes and is superior in the management of insomnia.",
+      "error": null
+    },
+    {
+      "id": "scifact-1179",
+      "claim": "The PRR MDA5 has a central DExD/H RNA helices domain.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions RLRs like MDA5 but does not contain information about a central DExD/H RNA helices domain.",
+      "error": null
+    },
+    {
+      "id": "scifact-54",
+      "claim": "AMP-activated protein kinase (AMPK) activation increases inflammation-related fibrosis in the lungs.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        6,
+        8
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that AMPK activation decreases fibrotic activity and reverses established fibrosis, rather than increasing inflammation-related fibrosis.",
+      "error": null
+    },
+    {
+      "id": "scifact-327",
+      "claim": "Deletion of αvβ8 does not result in a spontaneous inflammatory phenotype.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence explicitly states that \"Treg-cell-specific deletion of integrin alphavbeta8 did not result in a spontaneous inflammatory phenotype\".",
+      "error": null
+    },
+    {
+      "id": "scifact-1140",
+      "claim": "Taking 400mg of α-tocopheryl acetate helps to prevent prostate cancer.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        10,
+        15
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence concludes that vitamin E supplementation (400 IU every other day) \"did not reduce the risk of prostate or total cancer\" and had no effect on incidence.",
+      "error": null
+    },
+    {
+      "id": "scifact-847",
+      "claim": "New drugs for tuberculosis often do not penetrate the necrotic portion of a tuberculosis lesion in high concentrations.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        2,
+        3
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that key sterilizing drugs efficiently penetrate lung lesions and even accumulate in necrotic caseum, contradicting the claim that they often do not.",
+      "error": null
+    },
+    {
+      "id": "scifact-1336",
+      "claim": "UCB T cells reduce TCR diversity after transplantation.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        5
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence shows that cord blood-graft recipients approximated the TCR diversity of healthy individuals after 6 months rather than having reduced diversity.",
+      "error": null
+    },
+    {
+      "id": "scifact-354",
+      "claim": "Downregulation and mislocalization of Scribble prevents cell transformation and mammary tumorigenesis.",
+      "gold": "unsupported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [
+        3,
+        7
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that depletion or loss of Scribble induces dysplasia, promotes tumorigenesis, and inhibits breast cancer formation, which contradicts the claim that it prevents cell transformation.",
+      "error": null
+    },
+    {
+      "id": "scifact-1175",
+      "claim": "The PPR MDA5 has two N-terminal CARD domains.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses RLRs and MDA5 generally but does not mention N-terminal CARD domains.",
+      "error": null
+    },
+    {
+      "id": "scifact-1363",
+      "claim": "Venules have a thinner or absent smooth layer compared to arterioles.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions arterioles and venules in the context of angiogenesis, but does not state that venules have a thinner or absent smooth layer compared to arterioles.",
+      "error": null
+    },
+    {
+      "id": "scifact-637",
+      "claim": "Input from  mental and physical health care professionals is effective at decreasing homelessness.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses the needs and health care of homeless families and suggests strategies should be developed, but does not provide evidence that input from professionals is effective at decreasing homelessness.",
+      "error": null
+    },
+    {
+      "id": "scifact-411",
+      "claim": "Febrile seizures reduce the threshold for development of epilepsy.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence discusses febrile seizures increasing inhibitory synaptic transmission, but does not mention reducing the threshold for epilepsy.",
+      "error": null
+    },
+    {
+      "id": "scifact-904",
+      "claim": "PDPN promotes efficient motility along stromal surfaces by activating the C-type lectin receptor to rearrange the actin cytoskeleton in dendritic cells.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2,
+        7
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that activation of CLEC-2 (a C-type lectin receptor) by PDPN rearranges the actin cytoskeleton in dendritic cells to promote efficient motility along stromal surfaces.",
+      "error": null
+    },
+    {
+      "id": "scifact-142",
+      "claim": "Autologous transplantation of mesenchymal stem cells causes a higher rate of opportunistic infections than induction therapy with anti-interleukin-2 receptor antibodies.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        13
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that autologous MSCs compared with anti-IL-2 receptor antibody induction therapy resulted in a *decreased* risk of opportunistic infection, not a higher rate.",
+      "error": null
+    },
+    {
+      "id": "scifact-42",
+      "claim": "A high microerythrocyte count raises vulnerability to severe anemia in homozygous alpha (+)- thalassemia trait subjects.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        11
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that the increased erythrocyte count and microcytosis *protect* against severe malarial anemia rather than raising vulnerability to severe anemia.",
+      "error": null
+    },
+    {
+      "id": "scifact-436",
+      "claim": "Free histones are degraded by a Rad53-dependent mechanism once DNA has been replicated.",
+      "gold": "supported",
+      "pred": "partially_supported",
+      "confidence": 0.8,
+      "correct": false,
+      "cited_passages": [
+        1,
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms that excess histones are degraded in a Rad53-dependent manner, but specifies it occurs when DNA replication slows down or stops, rather than once DNA has been replicated.",
+      "error": null
+    },
+    {
+      "id": "scifact-1062",
+      "claim": "S-nitrosylated GAPDH physiologically transnitrosylates histone deacetylases.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        11
+      ],
+      "rationale_hit": true,
+      "rationale": "The evidence states that 'SNO-GAPDH physiologically transnitrosylates nuclear proteins, including... histone deacetylase-2 (HDAC2)'.",
+      "error": null
+    }
+  ]
+}

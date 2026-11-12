@@ -58,11 +58,11 @@ class Settings:
     # Models. The writer and verifier need judgement; extraction is simple
     # and runs on the cheapest model. Fallbacks are tried, in order, when a
     # model is unavailable or its daily quota is used up.
-    writer_model: str = "gemini-3.6-flash"
-    verifier_model: str = "gemini-3.6-flash"
+    writer_model: str = "gemini-3.5-flash-lite"
+    verifier_model: str = "gemini-3.5-flash-lite"
     extractor_model: str = "gemini-3.5-flash-lite"
     fallback_models: list[str] = field(
-        default_factory=lambda: ["gemini-3.5-flash-lite", "gemini-2.5-flash-lite"]
+        default_factory=lambda: ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
     )
     # Optional Gemini "thinking level" (e.g. "low"). Empty = model default.
     thinking_level: str = ""
@@ -104,7 +104,7 @@ class Settings:
             verifier_model=_env_str("ATLAS_VERIFIER_MODEL", cls.verifier_model),
             extractor_model=_env_str("ATLAS_EXTRACTOR_MODEL", cls.extractor_model),
             fallback_models=_env_list(
-                "ATLAS_FALLBACK_MODELS", ["gemini-3.5-flash-lite", "gemini-2.5-flash-lite"]
+                "ATLAS_FALLBACK_MODELS", ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
             ),
             thinking_level=_env_str("ATLAS_THINKING_LEVEL", ""),
             gemini_rpm=_env_int("GEMINI_RPM", cls.gemini_rpm),

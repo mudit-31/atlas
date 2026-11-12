@@ -94,21 +94,34 @@ class BM25Index:
             df.update(doc.keys())
         n = len(chunks)
         self.idf = {term: math.log(1 + (n - f + 0.5) / (f + 0.5)) for term, f in df.items()}
+        # Inverted index: term -> [(chunk index, term frequency)], so scoring
+        # only touches chunks that contain a query term.
+        self.postings: dict[str, list[tuple[int, int]]] = {}
+        for i, doc in enumerate(self.docs):
+            for term, tf in doc.items():
+                self.postings.setdefault(term, []).append((i, tf))
 
     def score(self, query: str) -> list[float]:
         terms = tokenize(query)
         scores = [0.0] * len(self.chunks)
         if not terms or not self.avg_len:
             return scores
-        for i, doc in enumerate(self.docs):
-            norm = self.k1 * (1 - self.b + self.b * self.lengths[i] / self.avg_len)
-            total = 0.0
-            for term in terms:
-                tf = doc.get(term)
-                if tf:
-                    total += self.idf[term] * tf * (self.k1 + 1) / (tf + norm)
-            scores[i] = total
+        for term in terms:
+            idf = self.idf.get(term)
+            if idf is None:
+                continue
+            for i, tf in self.postings[term]:
+                norm = self.k1 * (1 - self.b + self.b * self.lengths[i] / self.avg_len)
+                scores[i] += idf * tf * (self.k1 + 1) / (tf + norm)
         return scores
+
+    def top_k(self, query: str, k: int) -> list[tuple[int, float]]:
+        """(chunk index, score) of the k best-scoring chunks with score > 0."""
+        import heapq
+
+        scores = self.score(query)
+        best = heapq.nlargest(k, range(len(scores)), key=scores.__getitem__)
+        return [(i, scores[i]) for i in best if scores[i] > 0]
 
     def evidence_for(self, claim: Claim, k: int = 4) -> list[Evidence]:
         """Top-k chunks for a claim, always including the best chunk from each

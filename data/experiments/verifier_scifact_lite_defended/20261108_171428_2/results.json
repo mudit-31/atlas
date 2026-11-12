@@ -1,0 +1,276 @@
+{
+  "dataset": "data\\external\\scifact_dev_150.jsonl",
+  "n": 150,
+  "model": "gemini-3.5-flash-lite",
+  "served_by": {
+    "gemini-3.5-flash-lite": 40
+  },
+  "batch_size": 12,
+  "runs": 3,
+  "aggregate": {
+    "accuracy": {
+      "mean": 0.82,
+      "sd": 0.0055,
+      "min": 0.8133,
+      "max": 0.8267,
+      "runs": [
+        0.8133,
+        0.8267,
+        0.82
+      ]
+    },
+    "macro_f1": {
+      "mean": 0.832,
+      "sd": 0.0059,
+      "min": 0.8242,
+      "max": 0.8383,
+      "runs": [
+        0.8242,
+        0.8383,
+        0.8336
+      ]
+    },
+    "lenient_accuracy": {
+      "mean": 0.8422,
+      "sd": 0.0063,
+      "min": 0.8333,
+      "max": 0.8467,
+      "runs": [
+        0.8333,
+        0.8467,
+        0.8467
+      ]
+    },
+    "lenient_macro_f1": {
+      "mean": 0.8415,
+      "sd": 0.0063,
+      "min": 0.8326,
+      "max": 0.8466,
+      "runs": [
+        0.8326,
+        0.8466,
+        0.8453
+      ]
+    },
+    "problem_precision": {
+      "mean": 0.9558,
+      "sd": 0.0092,
+      "min": 0.949,
+      "max": 0.9688,
+      "runs": [
+        0.949,
+        0.9495,
+        0.9688
+      ]
+    },
+    "problem_recall": {
+      "mean": 0.9333,
+      "sd": 0.0047,
+      "min": 0.93,
+      "max": 0.94,
+      "runs": [
+        0.93,
+        0.94,
+        0.93
+      ]
+    },
+    "problem_f1": {
+      "mean": 0.9444,
+      "sd": 0.0039,
+      "min": 0.9394,
+      "max": 0.949,
+      "runs": [
+        0.9394,
+        0.9447,
+        0.949
+      ]
+    },
+    "seconds_per_run": {
+      "mean": 109.8633,
+      "sd": 53.5653,
+      "min": 69.49,
+      "max": 185.56,
+      "runs": [
+        69.49,
+        185.56,
+        74.54
+      ]
+    },
+    "calls_per_run": {
+      "mean": 13.3333,
+      "sd": 0.4714,
+      "min": 13,
+      "max": 14,
+      "runs": [
+        13,
+        14,
+        13
+      ]
+    },
+    "prompt_tokens_per_run": {
+      "mean": 111908,
+      "sd": 4212.9422,
+      "min": 108929,
+      "max": 117866,
+      "runs": [
+        108929,
+        117866,
+        108929
+      ]
+    },
+    "output_tokens_per_run": {
+      "mean": 35212,
+      "sd": 30779.7019,
+      "min": 13379,
+      "max": 78741,
+      "runs": [
+        13516,
+        78741,
+        13379
+      ]
+    },
+    "per_class_f1": {
+      "supported": {
+        "mean": 0.8639,
+        "sd": 0.005,
+        "min": 0.8571,
+        "max": 0.8687,
+        "runs": [
+          0.8571,
+          0.866,
+          0.8687
+        ]
+      },
+      "partially_supported": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "runs": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "unsupported": {
+        "mean": 0.8193,
+        "sd": 0.0033,
+        "min": 0.8155,
+        "max": 0.8235,
+        "runs": [
+          0.8155,
+          0.819,
+          0.8235
+        ]
+      },
+      "contradicted": {
+        "mean": 0.8128,
+        "sd": 0.0125,
+        "min": 0.8,
+        "max": 0.8298,
+        "runs": [
+          0.8,
+          0.8298,
+          0.8085
+        ]
+      }
+    },
+    "rationale_hit_rate": {
+      "mean": 0.9216,
+      "sd": 0.0113,
+      "min": 0.9136,
+      "max": 0.9375,
+      "runs": [
+        0.9375,
+        0.9136,
+        0.9136
+      ]
+    }
+  },
+  "run_dirs": [
+    "data\\experiments\\verifier_scifact_lite_defended\\runs\\20261108_170937",
+    "data\\experiments\\verifier_scifact_lite_defended\\runs\\20261108_171312",
+    "data\\experiments\\verifier_scifact_lite_defended\\runs\\20261108_171428"
+  ],
+  "confusion_matrices": [
+    {
+      "supported": {
+        "supported": 42,
+        "partially_supported": 3,
+        "unsupported": 2,
+        "contradicted": 3
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "unsupported": {
+        "supported": 4,
+        "partially_supported": 0,
+        "unsupported": 42,
+        "contradicted": 4
+      },
+      "contradicted": {
+        "supported": 2,
+        "partially_supported": 1,
+        "unsupported": 9,
+        "contradicted": 38
+      }
+    },
+    {
+      "supported": {
+        "supported": 42,
+        "partially_supported": 3,
+        "unsupported": 3,
+        "contradicted": 2
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "unsupported": {
+        "supported": 3,
+        "partially_supported": 1,
+        "unsupported": 43,
+        "contradicted": 3
+      },
+      "contradicted": {
+        "supported": 2,
+        "partially_supported": 0,
+        "unsupported": 9,
+        "contradicted": 39
+      }
+    },
+    {
+      "supported": {
+        "supported": 43,
+        "partially_supported": 4,
+        "unsupported": 1,
+        "contradicted": 2
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "unsupported": {
+        "supported": 4,
+        "partially_supported": 0,
+        "unsupported": 42,
+        "contradicted": 4
+      },
+      "contradicted": {
+        "supported": 2,
+        "partially_supported": 1,
+        "unsupported": 9,
+        "contradicted": 38
+      }
+    }
+  ],
+  "created_at": "2026-11-08T17:14:28"
+}

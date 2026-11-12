@@ -1,0 +1,705 @@
+{
+  "dataset": "data\\benchmark\\atlas_seed_v1.jsonl",
+  "model": "gemini-3.5-flash-lite",
+  "served_by": {
+    "gemini-3.5-flash-lite": 4
+  },
+  "batch_size": 12,
+  "created_at": "2026-11-08T17:09:49",
+  "elapsed_seconds": 10.69,
+  "usage": {
+    "llm_calls": 4,
+    "llm_cache_hits": 0,
+    "prompt_tokens": 6471,
+    "output_tokens": 3500,
+    "calls_by_model": {
+      "gemini-3.5-flash-lite": 4
+    },
+    "search_calls": 0,
+    "search_cache_hits": 0,
+    "search_credits": 0
+  },
+  "metrics": {
+    "n": 40,
+    "accuracy": 0.975,
+    "macro_f1": 0.9749,
+    "weighted_f1": 0.975,
+    "per_class": {
+      "supported": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "partially_supported": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9474,
+        "support": 10
+      },
+      "unsupported": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "contradicted": {
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "support": 10
+      }
+    },
+    "confusion_matrix": {
+      "supported": {
+        "supported": 10,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "partially_supported": {
+        "supported": 0,
+        "partially_supported": 9,
+        "unsupported": 0,
+        "contradicted": 1
+      },
+      "unsupported": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 10,
+        "contradicted": 0
+      },
+      "contradicted": {
+        "supported": 0,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 10
+      }
+    },
+    "problem_detection": {
+      "precision": 0.9524,
+      "recall": 1.0,
+      "f1": 0.9756,
+      "support": 20
+    },
+    "calibration": {
+      "mean_conf_correct": 0.9667,
+      "mean_conf_wrong": 1.0,
+      "accuracy_when_conf_ge_0_8": 0.975,
+      "share_conf_ge_0_8": 1.0
+    },
+    "lenient": {
+      "n": 40,
+      "accuracy": 0.75,
+      "macro_f1": 0.6605,
+      "weighted_f1": 0.6605,
+      "per_class": {
+        "supported": {
+          "precision": 0.5263,
+          "recall": 1.0,
+          "f1": 0.6897,
+          "support": 10
+        },
+        "partially_supported": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10
+        },
+        "unsupported": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10
+        },
+        "contradicted": {
+          "precision": 0.9091,
+          "recall": 1.0,
+          "f1": 0.9524,
+          "support": 10
+        }
+      },
+      "confusion_matrix": {
+        "supported": {
+          "supported": 10,
+          "partially_supported": 0,
+          "unsupported": 0,
+          "contradicted": 0
+        },
+        "partially_supported": {
+          "supported": 9,
+          "partially_supported": 0,
+          "unsupported": 0,
+          "contradicted": 1
+        },
+        "unsupported": {
+          "supported": 0,
+          "partially_supported": 0,
+          "unsupported": 10,
+          "contradicted": 0
+        },
+        "contradicted": {
+          "supported": 0,
+          "partially_supported": 0,
+          "unsupported": 0,
+          "contradicted": 10
+        }
+      },
+      "problem_detection": {
+        "precision": 0.9524,
+        "recall": 1.0,
+        "f1": 0.9756,
+        "support": 20
+      }
+    }
+  },
+  "predictions": [
+    {
+      "id": "s01",
+      "claim": "Veltrix Energy's Halden solar farm has a capacity of 420 megawatts.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence explicitly states that the Halden solar farm has a capacity of 420 megawatts.",
+      "error": null
+    },
+    {
+      "id": "s02",
+      "claim": "The Orven Lake restoration project was funded by a regional water authority.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms the project budget was provided by the Northvale Regional Water Authority.",
+      "error": null
+    },
+    {
+      "id": "s03",
+      "claim": "Brightwell University's enrolment grew by more than 10% between 2019 and 2023.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "Enrollment grew from 18,200 in 2019 to 20,650 in 2023, representing an increase of more than 10%.",
+      "error": null
+    },
+    {
+      "id": "s04",
+      "claim": "Kestrel Robotics was founded in Lisbon.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states the company was started in Lisbon, Portugal.",
+      "error": null
+    },
+    {
+      "id": "s05",
+      "claim": "The Meridian-7 satellite was launched on a reusable rocket.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1,
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "The satellite launched on a Falcora 3 rocket, whose first stage is recovered and reused.",
+      "error": null
+    },
+    {
+      "id": "s06",
+      "claim": "Tamsin Okafor became chief executive of Lumora Health in 2022.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states Tamsin Okafor was named chief executive in January 2022.",
+      "error": null
+    },
+    {
+      "id": "s07",
+      "claim": "The Corvane bridge took four years to build.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "Construction started in spring 2015 and the bridge opened in spring 2019, exactly four years.",
+      "error": null
+    },
+    {
+      "id": "s08",
+      "claim": "Pellucid Labs' Aster model was trained on public-domain books only.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms the training set consisted exclusively of public domain books.",
+      "error": null
+    },
+    {
+      "id": "s09",
+      "claim": "Ferrous Point's port handled fewer containers in 2023 than in 2022.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "Container traffic fell to 1.1 million TEU in 2023 from 1.4 million TEU in the previous year.",
+      "error": null
+    },
+    {
+      "id": "s10",
+      "claim": "The Halvard Museum is free to enter on Sundays.",
+      "gold": "supported",
+      "pred": "supported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence explicitly states that entry to the Halvard Museum is free on Sundays.",
+      "error": null
+    },
+    {
+      "id": "p01",
+      "claim": "Veltrix Energy's Halden solar farm, which opened in March 2023, has a capacity of 420 megawatts.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms the capacity and that it opened in March, but does not mention the year 2023.",
+      "error": null
+    },
+    {
+      "id": "p02",
+      "claim": "Kestrel Robotics was founded in Lisbon and is still headquartered there.",
+      "gold": "partially_supported",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": false,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "No evidence supports that it is still headquartered in Lisbon, and other passages indicate it moved to Berlin.",
+      "error": null
+    },
+    {
+      "id": "p03",
+      "claim": "Lumora Health's revenue doubled in 2023 to 80 million dollars.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms revenue doubled in 2023, but does not mention the 80 million dollar figure.",
+      "error": null
+    },
+    {
+      "id": "p04",
+      "claim": "The Orven Lake restoration project removed invasive plants and reintroduced native fish species.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms invasive water hyacinth was removed from Orven Lake, but does not mention reintroducing native fish.",
+      "error": null
+    },
+    {
+      "id": "p05",
+      "claim": "Brightwell University is the largest university in the Northvale region, with over 20,000 students.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms Brightwell University enrolled 20,650 students in 2023, but does not state it is the largest in the Northvale region.",
+      "error": null
+    },
+    {
+      "id": "p06",
+      "claim": "Pellucid Labs released the Aster model as open source under the Apache 2.0 licence.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.8,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states Pellucid Labs released the weights of its Aster model, but does not mention the Apache 2.0 licence.",
+      "error": null
+    },
+    {
+      "id": "p07",
+      "claim": "The Meridian-7 satellite will provide internet access to remote areas of South America starting next year.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.8,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms Meridian-7 provides broadband to remote areas, but does not specify South America or starting next year.",
+      "error": null
+    },
+    {
+      "id": "p08",
+      "claim": "Ferrous Point's port container traffic fell by about 20% in 2023 because of a strike.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.8,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence shows traffic fell from 1.4 million to 1.1 million TEU (about 21.4%), but does not mention a strike as the cause.",
+      "error": null
+    },
+    {
+      "id": "p09",
+      "claim": "Tamsin Okafor, a former surgeon, became chief executive of Lumora Health in 2022.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.9,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms Lumora Health named Tamsin Okafor chief executive in January 2022, but does not mention her being a former surgeon.",
+      "error": null
+    },
+    {
+      "id": "p10",
+      "claim": "The Corvane bridge cost 300 million euros and opened in 2019.",
+      "gold": "partially_supported",
+      "pred": "partially_supported",
+      "confidence": 0.8,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence confirms the Corvane bridge opened in spring 2019, but does not state its cost was 300 million euros.",
+      "error": null
+    },
+    {
+      "id": "u01",
+      "claim": "Veltrix Energy plans to build a second solar farm near Halden.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions switching on a solar farm in Halden, but does not state any plans for a second solar farm.",
+      "error": null
+    },
+    {
+      "id": "u02",
+      "claim": "Kestrel Robotics employs more than 500 people.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions Kestrel Robotics' founding and headquarters move, but contains no information on how many people it employs.",
+      "error": null
+    },
+    {
+      "id": "u03",
+      "claim": "The Halvard Museum's collection includes over 3,000 paintings.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence only gives opening hours and admission fees for the Halvard Museum, saying nothing about its collection size.",
+      "error": null
+    },
+    {
+      "id": "u04",
+      "claim": "Brightwell University was ranked first in the country for engineering.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions a new robotics lab and hiring staff for the engineering faculty, but does not mention any countrywide ranking.",
+      "error": null
+    },
+    {
+      "id": "u05",
+      "claim": "The Meridian-7 launch was delayed twice because of bad weather.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence does not mention any delays or bad weather regarding the launch.",
+      "error": null
+    },
+    {
+      "id": "u06",
+      "claim": "Pellucid Labs' Aster model outperforms all competing models on reasoning benchmarks.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence only states that Aster scores well on several benchmarks and is competitive, not that it outperforms all competing models.",
+      "error": null
+    },
+    {
+      "id": "u07",
+      "claim": "Lumora Health is planning an initial public offering in 2025.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions a new CEO and revenue growth, but says nothing about an initial public offering in 2025.",
+      "error": null
+    },
+    {
+      "id": "u08",
+      "claim": "The Orven Lake restoration increased the number of bird species seen at the lake.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions removing water hyacinth and improved water clarity, but contains no information about bird species.",
+      "error": null
+    },
+    {
+      "id": "u09",
+      "claim": "Ferrous Point's port is the busiest container port in the region.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions container traffic figures for Ferrous Point in 2023 but does not state whether it is the busiest port in the region.",
+      "error": null
+    },
+    {
+      "id": "u10",
+      "claim": "The Corvane bridge was designed by the architect Ilse Marrow.",
+      "gold": "unsupported",
+      "pred": "unsupported",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [],
+      "rationale_hit": null,
+      "rationale": "The evidence mentions the opening date and features of the bridge, but does not state who designed it.",
+      "error": null
+    },
+    {
+      "id": "c01",
+      "claim": "Veltrix Energy's Halden solar farm has a capacity of 240 megawatts.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that the site has a capacity of \"420 megawatts\", contradicting the 240 megawatts claim.",
+      "error": null
+    },
+    {
+      "id": "c02",
+      "claim": "Kestrel Robotics was founded in Berlin.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states Kestrel Robotics \"was started in 2016 by two engineers in Lisbon, Portugal\" rather than Berlin.",
+      "error": null
+    },
+    {
+      "id": "c03",
+      "claim": "Brightwell University's enrolment declined between 2019 and 2023.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states enrollment was 18,200 in 2019 and 20,650 in 2023, which is an increase, not a decline.",
+      "error": null
+    },
+    {
+      "id": "c04",
+      "claim": "Tamsin Okafor founded Lumora Health.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that Tamsin Okafor replaced \"founder Dev Rao\", contradicting the claim that Okafor founded it.",
+      "error": null
+    },
+    {
+      "id": "c05",
+      "claim": "Pellucid Labs' Aster model was trained partly on licensed news articles.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that \"no web data or licensed material was used\", directly contradicting the claim.",
+      "error": null
+    },
+    {
+      "id": "c06",
+      "claim": "The Halvard Museum is closed on Sundays.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states opening hours include Sunday (\"Tuesday to Sunday, 10:00-18:00\"), contradicting the claim that it is closed on Sundays.",
+      "error": null
+    },
+    {
+      "id": "c07",
+      "claim": "Ferrous Point's port handled more containers in 2023 than in 2022.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that container traffic fell from 1.4 million TEU in the previous year to 1.1 million TEU in 2023.",
+      "error": null
+    },
+    {
+      "id": "c08",
+      "claim": "The Meridian-7 satellite failed to reach orbit.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        2
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that 'The satellite reached its planned orbit'.",
+      "error": null
+    },
+    {
+      "id": "c09",
+      "claim": "The Corvane bridge opened in 2021.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states that the bridge opened in spring 2019, not 2021.",
+      "error": null
+    },
+    {
+      "id": "c10",
+      "claim": "The Orven Lake restoration was funded by a private donor.",
+      "gold": "contradicted",
+      "pred": "contradicted",
+      "confidence": 1.0,
+      "correct": true,
+      "cited_passages": [
+        1
+      ],
+      "rationale_hit": null,
+      "rationale": "The evidence states the budget was provided by a public body, not a private donor.",
+      "error": null
+    }
+  ]
+}

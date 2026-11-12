@@ -119,7 +119,62 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--model", help="verifier model to evaluate (overrides ATLAS_VERIFIER_MODEL)")
     p.add_argument("--batch-size", type=int, help="claims per Gemini call")
     p.set_defaults(func=cmd_evaluate)
+
+    p = sub.add_parser("experiment", help="run a measurement experiment (results in data/experiments/)")
+    p.add_argument(
+        "name", choices=["scifact-build", "retrieval", "verifier", "planted", "injection"],
+        help="which experiment to run",
+    )
+    p.add_argument("--dataset", help="verifier: JSONL dataset (default: SciFact 150)")
+    p.add_argument("--model", default="gemini-3.5-flash-lite", help="model under test")
+    p.add_argument("--runs", type=int, default=3, help="verifier: repeated runs")
+    p.add_argument("--batch-size", type=int, help="verifier: claims per call")
+    p.add_argument("--limit", type=int, help="verifier: only the first N examples")
+    p.set_defaults(func=cmd_experiment)
     return parser
+
+
+def cmd_experiment(args: argparse.Namespace, settings: Settings) -> int:
+    name = args.name
+    if name == "scifact-build":
+        from .experiments.scifact import build_benchmark
+
+        print(f"Wrote {build_benchmark()}")
+        return 0
+    if name == "retrieval":
+        from .experiments.scifact import retrieval_recall
+
+        r = retrieval_recall()
+        print(f"Doc recall: {r['doc_recall']}\nRationale recall: {r['rationale_recall']}\nSaved to {r['output_dir']}")
+        return 0
+    if name == "verifier":
+        from .experiments.scifact import DEFAULT_OUT
+        from .experiments.verifier import verifier_runs
+
+        dataset = Path(args.dataset) if args.dataset else DEFAULT_OUT
+        tag = f"verifier_{dataset.stem}_{args.model}".replace(".", "-")
+        r = verifier_runs(dataset, tag, model=args.model, runs=args.runs,
+                          batch_size=args.batch_size, limit=args.limit)
+        a = r["aggregate"]
+        print(f"Accuracy {a['accuracy']['mean']:.3f} ± {a['accuracy']['sd']:.3f} | "
+              f"macro F1 {a['macro_f1']['mean']:.3f} ± {a['macro_f1']['sd']:.3f} | served by {r['served_by']}")
+        print(f"Saved to {r['output_dir']}")
+        return 0
+    if name == "planted":
+        from .experiments.planted import run_planted
+
+        r = run_planted(model=args.model)
+        s = r["summary"]
+        print(f"Content errors detected {s['content_detection_rate']:.1%} | "
+              f"false alarms {s['false_alarm_rate']:.1%}\nSaved to {r['output_dir']}")
+        return 0
+    from .experiments.injection import run_injection
+
+    r = run_injection(model=args.model)
+    for attack, d in r["per_attack"].items():
+        print(f"{attack:<14} success {d['success_rate']:.1%}")
+    print(f"Saved to {r['output_dir']}")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -1,0 +1,1961 @@
+{
+  "summary": {
+    "model": "gemini-3.5-flash-lite",
+    "reports": 10,
+    "planted_total": 71,
+    "content_errors": 62,
+    "content_detection_rate": 0.9194,
+    "content_contradicted_rate": 0.7258,
+    "overall_detection_rate": 0.9014,
+    "controls": 54,
+    "false_alarm_rate": 0.0,
+    "per_type": {
+      "date": {
+        "n": 6,
+        "detected": 6,
+        "detection_rate": 1.0,
+        "labels": {
+          "contradicted": 6
+        }
+      },
+      "entity": {
+        "n": 19,
+        "detected": 14,
+        "detection_rate": 0.7368,
+        "labels": {
+          "unsupported": 3,
+          "contradicted": 11,
+          "supported": 2,
+          "partially_supported": 3
+        }
+      },
+      "fabricated": {
+        "n": 10,
+        "detected": 10,
+        "detection_rate": 1.0,
+        "labels": {
+          "unsupported": 9,
+          "contradicted": 1
+        }
+      },
+      "negation": {
+        "n": 19,
+        "detected": 19,
+        "detection_rate": 1.0,
+        "labels": {
+          "contradicted": 19
+        }
+      },
+      "number": {
+        "n": 8,
+        "detected": 8,
+        "detection_rate": 1.0,
+        "labels": {
+          "contradicted": 8
+        }
+      },
+      "wrong_citation": {
+        "n": 9,
+        "detected": 7,
+        "detection_rate": 0.7778,
+        "labels": {
+          "supported": 9
+        }
+      }
+    },
+    "pass1_claims": 125,
+    "pass1_label_share": {
+      "partially_supported": 0.024,
+      "supported": 0.976
+    },
+    "mean_trust_score": 94.5,
+    "mean_claims_per_report": 12.5,
+    "mean_pipeline_seconds": 23.3
+  },
+  "reports": [
+    {
+      "question": "How much did global electric vehicle sales grow in 2024?",
+      "sources": 6,
+      "claims": 1,
+      "trust_score": 50.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 0,
+        "partially_supported": 1,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 30.27,
+      "pipeline_llm_requests": 3,
+      "total_llm_calls_incl_experiment": 5
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "sources": 6,
+      "claims": 16,
+      "trust_score": 100.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 16,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 41.69,
+      "pipeline_llm_requests": 4,
+      "total_llm_calls_incl_experiment": 7
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "sources": 6,
+      "claims": 12,
+      "trust_score": 100.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 12,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 14.3,
+      "pipeline_llm_requests": 3,
+      "total_llm_calls_incl_experiment": 6
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "sources": 6,
+      "claims": 16,
+      "trust_score": 100.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 16,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 15.09,
+      "pipeline_llm_requests": 4,
+      "total_llm_calls_incl_experiment": 7
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "sources": 6,
+      "claims": 7,
+      "trust_score": 100.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 0.714,
+      "counts": {
+        "supported": 7,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 13.33,
+      "pipeline_llm_requests": 3,
+      "total_llm_calls_incl_experiment": 6
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "sources": 6,
+      "claims": 12,
+      "trust_score": 100.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 12,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 14.57,
+      "pipeline_llm_requests": 3,
+      "total_llm_calls_incl_experiment": 6
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "sources": 6,
+      "claims": 16,
+      "trust_score": 100.0,
+      "citation_coverage": 0.875,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 16,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 31.65,
+      "pipeline_llm_requests": 4,
+      "total_llm_calls_incl_experiment": 7
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "sources": 6,
+      "claims": 21,
+      "trust_score": 97.6,
+      "citation_coverage": 0.952,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 20,
+        "partially_supported": 1,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 40.89,
+      "pipeline_llm_requests": 4,
+      "total_llm_calls_incl_experiment": 7
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "sources": 6,
+      "claims": 8,
+      "trust_score": 100.0,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 8,
+        "partially_supported": 0,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 0.06,
+      "pipeline_llm_requests": 3,
+      "total_llm_calls_incl_experiment": 3
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "sources": 6,
+      "claims": 16,
+      "trust_score": 96.9,
+      "citation_coverage": 1.0,
+      "citation_accuracy": 1.0,
+      "counts": {
+        "supported": 15,
+        "partially_supported": 1,
+        "unsupported": 0,
+        "contradicted": 0
+      },
+      "pipeline_seconds": 30.8,
+      "pipeline_llm_requests": 4,
+      "total_llm_calls_incl_experiment": 7
+    }
+  ],
+  "planted": [
+    {
+      "question": "How much did global electric vehicle sales grow in 2024?",
+      "type": "fabricated",
+      "claim": "Global electric vehicle sales reached 16.5 million units in 2024, representing a year-on-year increase of 28 percent.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "The provided evidence passages do not mention global electric vehicle sales or any related statistics.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "negation",
+      "claim": "New images of Centaurus A failed to cut through thick dust lanes to show a densely packed tapestry of individual stars and an active galaxy.",
+      "original": "New images of Centaurus A cut through thick dust lanes to show a densely packed tapestry of individual stars and an active galaxy.",
+      "cited": [
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Webb's sensitivity successfully 'cuts through the thick lanes of dust', directly contradicting the claim that it failed to do so.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "entity",
+      "claim": "The Hubble Space Telescope has studied weather on gas giant exoplanets.",
+      "original": "The James Webb Space Telescope has studied weather on gas giant exoplanets.",
+      "cited": [
+        3
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "The provided evidence mentions Hubble working alongside Webb or performing past missions, but does not state that Hubble studied weather on gas giant exoplanets.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "number",
+      "claim": "Data collected by the James Webb Space Telescope has prompted over 1,500 research papers.",
+      "original": "Data collected by the James Webb Space Telescope has prompted over 2,600 research papers.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that over 2,600 research papers were prompted, which contradicts the figure of 1,500.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "entity",
+      "claim": "The James Webb Space Telescope has uncovered the survival of dust and water near the Andromeda Galaxy's central black hole.",
+      "original": "The James Webb Space Telescope has uncovered the survival of dust and water near the Milky Way's central black hole.",
+      "cited": [
+        4,
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence specifies that dust and water survived near the Milky Way's central black hole, not the Andromeda Galaxy's central black hole.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "wrong_citation",
+      "claim": "The James Webb Space Telescope has studied exoplanet weather and planetary atmospheres.",
+      "original": "The James Webb Space Telescope has studied exoplanet weather and planetary atmospheres.",
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that Webb has studied weather on gas giant exoplanets and references exoplanet atmospheres.",
+      "detected": false
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "negation",
+      "claim": "The James Webb Space Telescope has not sized up asteroids in Earth's neighborhood.",
+      "original": "The James Webb Space Telescope has sized up asteroids in Earth's neighborhood.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Webb has been 'sizing up asteroids in our own planet’s neighborhood', contradicting the claim that it has not.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "fabricated",
+      "claim": "The James Webb Space Telescope detected atmospheric methane on the exoplanet LHS 475 b within 12 hours of observation.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "None of the provided evidence sources mention LHS 475 b or the detection of atmospheric methane within 12 hours.",
+      "detected": true
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "entity",
+      "claim": "Dust and water can form and survive surprisingly close to M87*, the supermassive black hole at the center of the Milky Way.",
+      "original": "Dust and water can form and survive surprisingly close to Sagittarius A*, the supermassive black hole at the center of the Milky Way.",
+      "cited": [
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence S4-C2 associates the survival of dust and water with Sagittarius A* at the center of the Milky Way, whereas the claim attributes it to M87*.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "entity",
+      "claim": "Manufacturers of high-risk AI systems also carry certain obligations under the EU AI Act.",
+      "original": "Deployers of high-risk AI systems also carry certain obligations under the EU AI Act.",
+      "cited": [
+        2
+      ],
+      "label": "unsupported",
+      "confidence": 0.0,
+      "rationale": "The cited evidence does not mention manufacturers of high-risk AI systems carrying obligations.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "entity",
+      "claim": "High-risk AI systems are subject to specific legal requirements and strict obligations including risk management, data governance, human oversight, and environmental audits.",
+      "original": "High-risk AI systems are subject to specific legal requirements and strict obligations including risk management, data governance, human oversight, and conformity assessments.",
+      "cited": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence lists conformity assessments, accuracy, robustness, and cybersecurity instead of environmental audits.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "negation",
+      "claim": "Additional requirements for high-risk AI systems exclude compliance with the requirements, conformity assessments, and maintaining a quality management system.",
+      "original": "Additional requirements for high-risk AI systems include compliance with the requirements, conformity assessments, and maintaining a quality management system.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence lists compliance with the requirements, conformity assessments, and quality management systems as requirements for high-risk AI, which directly contradicts the claim that they are excluded.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "fabricated",
+      "claim": "Under the EU AI Act, providers of high-risk AI systems are mandated to retain all system logs for a minimum duration of 18 months.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 0.0,
+      "rationale": "The provided text does not mention a minimum duration of 18 months for retaining system logs.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "wrong_citation",
+      "claim": "Obligations for high-risk AI systems fall on providers intending to place or put them into service in the EU, regardless of whether they are established in the EU or a third country.",
+      "original": "Obligations for high-risk AI systems fall on providers intending to place or put them into service in the EU, regardless of whether they are established in the EU or a third country.",
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 0.9,
+      "rationale": "Evidence states that obligations fall on providers intending to place or put into service high-risk AI systems in the EU regardless of location.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "entity",
+      "claim": "Deployers of high-risk AI systems are defined as natural or legal persons, public authorities, agencies, or other bodies deploying an AI system in a recreational capacity.",
+      "original": "Deployers of high-risk AI systems are defined as natural or legal persons, public authorities, agencies, or other bodies deploying an AI system in a professional capacity.",
+      "cited": [
+        2
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence states they deploy an AI system in a 'professional capacity', not a 'recreational capacity'.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "negation",
+      "claim": "High-risk applications exclude CV-scanning tools that rank job applicants.",
+      "original": "High-risk applications include CV-scanning tools that rank job applicants.",
+      "cited": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence states that high-risk applications include a CV-scanning tool, contradicting the claim that they are excluded.",
+      "detected": true
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "negation",
+      "claim": "The EU AI Act classifies AI systems according to their risk, regulating high-risk applications while permitting unacceptable risks and leaving minimal-risk systems unregulated.",
+      "original": "The EU AI Act classifies AI systems according to their risk, regulating high-risk applications while prohibiting unacceptable risks and leaving minimal-risk systems unregulated.",
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence states that unacceptable risks are prohibited or banned, not permitted.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "wrong_citation",
+      "claim": "Banks issued a large volume of mortgages to subprime borrowers.",
+      "original": "Banks issued a large volume of mortgages to subprime borrowers.",
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Multiple sources confirm that banks extended increasing volumes of mortgages to subprime borrowers.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "date",
+      "claim": "The 2012 global financial crisis was triggered by a downturn in the United States housing market.",
+      "original": "The 2008 global financial crisis was triggered by a downturn in the United States housing market.",
+      "cited": [
+        3,
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the GFC occurred between mid-2007 and early 2009, not in 2012.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "negation",
+      "claim": "The downturn in the United States housing market concealed widespread vulnerabilities tied to subprime lending and risky borrowing.",
+      "original": "The downturn in the United States housing market exposed widespread vulnerabilities tied to subprime lending and risky borrowing.",
+      "cited": [
+        3,
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 0.9,
+      "rationale": "The downturn was a 'catalyst' that exposed or triggered vulnerabilities rather than concealing them.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "entity",
+      "claim": "Hedge funds used securitisation to package mortgage loans into mortgage-backed securities and collateralised debt obligations.",
+      "original": "Banks used securitisation to package mortgage loans into mortgage-backed securities and collateralised debt obligations.",
+      "cited": [
+        3,
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that *banks* developed the model and packaged mortgages, not hedge funds.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "entity",
+      "claim": "Central banks developed an originate-and-distribute business model, using securitisation to package mortgage cash flows into mortgage-backed securities and collateralised debt obligations.",
+      "original": "Banks developed an originate-and-distribute business model, using securitisation to package mortgage cash flows into mortgage-backed securities and collateralised debt obligations.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The text states that *banks* developed this model, not central banks.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "fabricated",
+      "claim": "Lehman Brothers held over 680 billion dollars in total assets immediately prior to filing for Chapter 11 bankruptcy protection in September 2008.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "None of the provided evidence passages mention the 680 billion dollar asset figure for Lehman Brothers.",
+      "detected": true
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "negation",
+      "claim": "As fears grew regarding the quality of assets, credit markets thawed.",
+      "original": "As fears grew regarding the quality of assets, credit markets froze.",
+      "cited": [
+        3,
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that credit markets 'froze' rather than thawed due to fears regarding asset quality.",
+      "detected": true
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "date",
+      "claim": "Approval for Casgevy occurred in late 2024.",
+      "original": "Approval for Casgevy occurred in late 2023.",
+      "cited": [
+        1,
+        2
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that approval for Casgevy occurred in 'late 2023', not late 2024.",
+      "detected": true
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "negation",
+      "claim": "Vertex is not the manufacturer and exclusive license holder of Casgevy.",
+      "original": "Vertex is the manufacturer and exclusive license holder of Casgevy.",
+      "cited": [
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that 'Vertex is the manufacturer and exclusive license holder of CASGEVY', directly contradicting the claim.",
+      "detected": true
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "negation",
+      "claim": "Casgevy has not received regulatory clearance in multiple regions.",
+      "original": "Casgevy has received regulatory clearance in multiple regions.",
+      "cited": [
+        2
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Casgevy 'has since received regulatory clearance in multiple regions'.",
+      "detected": true
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "entity",
+      "claim": "Casgevy is indicated for the treatment of sickle cell anemia.",
+      "original": "Casgevy is indicated for the treatment of transfusion-dependent beta thalassemia.",
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that Casgevy is indicated for sickle cell disease (SCD), which is synonymous with sickle cell anemia.",
+      "detected": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "entity",
+      "claim": "Casgevy was developed through a collaboration between Pfizer and CRISPR Therapeutics.",
+      "original": "Casgevy was developed through a collaboration between Vertex Pharmaceuticals and CRISPR Therapeutics.",
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence shows Casgevy was developed in collaboration between CRISPR Therapeutics and Vertex Pharmaceuticals, not Pfizer.",
+      "detected": true
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "fabricated",
+      "claim": "In 2025, the FDA granted accelerated approval to NovaCasg, a revolutionary CRISPR-based therapy designed to permanently eliminate hereditary high cholesterol.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "None of the provided evidence mentions NovaCasg or a therapy for hereditary high cholesterol.",
+      "detected": true
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "wrong_citation",
+      "claim": "Casgevy is indicated for the treatment of sickle cell disease.",
+      "original": "Casgevy is indicated for the treatment of sickle cell disease.",
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence mentions the 'historic FDA approval of Casgevy for sickle cell disease'.",
+      "detected": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "date",
+      "claim": "India's Unified Payments Interface (UPI) digital payments system was launched in April 2018 by the National Payments Corporation of India (NPCI).",
+      "original": "India's Unified Payments Interface (UPI) digital payments system was launched in April 2016 by the National Payments Corporation of India (NPCI).",
+      "cited": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states UPI was launched in 2016 (specifically April 11, 2016), not April 2018.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "wrong_citation",
+      "claim": "By March 2023, the Unified Payments Interface platform recorded over 8.6 billion transactions worth over INR 12.08 trillion.",
+      "original": "By March 2023, the Unified Payments Interface platform recorded over 8.6 billion transactions worth over INR 12.08 trillion.",
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that UPI recorded over 8.6 billion transactions worth over INR 12.08 trillion in March 2023.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "number",
+      "claim": "The Unified Payments Interface was launched on April 11, 2017, by the National Payments Corporation of India (NPCI) under the regulatory oversight of the Reserve Bank of India (RBI).",
+      "original": "The Unified Payments Interface was launched on April 11, 2016, by the National Payments Corporation of India (NPCI) under the regulatory oversight of the Reserve Bank of India (RBI).",
+      "cited": [
+        2,
+        3,
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states UPI was launched on April 11, 2016, not April 11, 2017.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "fabricated",
+      "claim": "In 2024, the Unified Payments Interface crossed a milestone of processing over 13 billion international cross-border transactions through partnerships with banks in Singapore and France.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "The provided evidence does not mention UPI crossing a milestone of 13 billion international cross-border transactions in 2024.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "number",
+      "claim": "During the first decade of operations, the transaction values of the Unified Payments Interface rose from ₹0.07 lakh crore to approximately ₹214 lakh crore.",
+      "original": "During the first decade of operations, the transaction values of the Unified Payments Interface rose from ₹0.07 lakh crore to approximately ₹314 lakh crore.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states transaction values rose to approximately ₹314 lakh crore, not ₹214 lakh crore.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "number",
+      "claim": "By FY 2025-26, the Unified Payments Interface platform achieved daily averages of 56 crore transactions and ₹0.86 lakh crore in value.",
+      "original": "By FY 2025-26, the Unified Payments Interface platform achieved daily averages of 66 crore transactions and ₹0.86 lakh crore in value.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the daily average transactions were 66 crore, not 56 crore.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "date",
+      "claim": "Over its first decade of operations, transaction volume of the Unified Payments Interface surged nearly 12,000-fold, expanding from 2 crore transactions in FY 2018-19 to over 24,162 crore transactions in FY 2025-26.",
+      "original": "Over its first decade of operations, transaction volume of the Unified Payments Interface surged nearly 12,000-fold, expanding from 2 crore transactions in FY 2016-17 to over 24,162 crore transactions in FY 2025-26.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the start fiscal year was FY 2016-17, not FY 2018-19.",
+      "detected": true
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "number",
+      "claim": "The Unified Payments Interface captures nearly 39% of global real-time payments.",
+      "original": "The Unified Payments Interface captures nearly 49% of global real-time payments.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that UPI captures nearly 49% of global real-time payments, not 39%.",
+      "detected": true
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "entity",
+      "claim": "Intermittent fasting can improve glucose homeostasis, lipid profiles, blood sugar control, and oncology control.",
+      "original": "Intermittent fasting can improve glucose homeostasis, lipid profiles, blood sugar control, and chronic illness control.",
+      "cited": [
+        2,
+        3,
+        4
+      ],
+      "label": "partially_supported",
+      "confidence": 0.8,
+      "rationale": "The evidence supports improvements in glucose homeostasis, lipid profiles, and blood sugar control, but does not explicitly mention 'oncology control' (only cancer prognosis/studies).",
+      "detected": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "fabricated",
+      "claim": "A recent clinical trial by the Mayo Clinic found that intermittent fasting led to an average weight loss of 14.5 pounds over a 12-week period.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence mentions a 2022 study where participants lost an average of 9% of their body weight, not a Mayo Clinic trial finding an average of 14.5 pounds over 12 weeks.",
+      "detected": true
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "negation",
+      "claim": "Intermittent fasting cannot provide benefits such as weight loss, improved blood sugar control, and changes in hormone levels and cellular repair processes.",
+      "original": "Intermittent fasting can provide benefits such as weight loss, improved blood sugar control, and changes in hormone levels and cellular repair processes.",
+      "cited": [],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence directly contradicts the claim by stating that intermittent fasting provides benefits like weight loss, improved blood sugar control, hormone changes, and cellular repair.",
+      "detected": true
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "negation",
+      "claim": "Intermittent fasting is not an eating pattern involving timed cycles of eating and fasting.",
+      "original": "Intermittent fasting is an eating pattern involving timed cycles of eating and fasting.",
+      "cited": [],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the exact opposite, confirming that intermittent fasting is 'an eating pattern in which you cycle between periods of eating and periods of fasting'.",
+      "detected": true
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "entity",
+      "claim": "Physicians face obstacles in accurately determining what people are actually eating during dietary interventions.",
+      "original": "Researchers face obstacles in accurately determining what people are actually eating during dietary interventions.",
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence quotes Varady stating that 'The biggest obstacle to making the data more robust... is also the hardest to solve: We have no idea what people are actually eating'.",
+      "detected": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "negation",
+      "claim": "Intermittent fasting cannot exert anti-inflammatory effects.",
+      "original": "Intermittent fasting can exert anti-inflammatory effects.",
+      "cited": [
+        2,
+        3,
+        4
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence directly contradicts the claim, stating that intermittent fasting has 'anti-inflammatory effects' and can 'reduce inflammation'.",
+      "detected": true
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "wrong_citation",
+      "claim": "Fasting causes a metabolic shift from burning sugar to burning fat.",
+      "original": "Fasting causes a metabolic shift from burning sugar to burning fat.",
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence explicitly states that 'Fasting causes the metabolism to shift from first burning sugar, a process known as glycolysis, to burning fat circulating in the blood'.",
+      "detected": true
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "entity",
+      "claim": "Some evidence raises questions about whether the health claims of the ketogenic diet have been overhyped or if certain practices could potentially be harmful.",
+      "original": "Some evidence raises questions about whether the health claims of intermittent fasting have been overhyped or if certain practices could potentially be harmful.",
+      "cited": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "The provided evidence discusses intermittent fasting rather than the ketogenic diet.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "wrong_citation",
+      "claim": "COP28 resulted in the formal adoption of the Loss and Damage Fund with financial pledges.",
+      "original": "COP28 resulted in the formal adoption of the Loss and Damage Fund with financial pledges.",
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms the creation of the Loss and Damage Fund and notes that governments made commitments with pledges totalling $770 million.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "number",
+      "claim": "Financial commitments totaling $500 million were made toward the Loss and Damage Fund and related funding arrangements by 19 countries.",
+      "original": "Financial commitments totaling $792 million were made toward the Loss and Damage Fund and related funding arrangements by 19 countries.",
+      "cited": [
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that 19 countries made commitments totaling $792 million, which contradicts the $500 million claim.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "fabricated",
+      "claim": "Delegates at COP28 officially endorsed a binding global carbon tax of $50 per ton starting in 2026.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "The provided evidence passages do not mention any global carbon tax of $50 per ton.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "negation",
+      "claim": "The COP28 conference failed to yield commitments to triple renewable energy.",
+      "original": "The COP28 conference yielded commitments to triple renewable energy.",
+      "cited": [
+        1,
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that the text includes commitments to triple renewable energy, contradicting the claim that it failed to do so.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "entity",
+      "claim": "The fund for loss and damage promised at COP27 was adopted on the first day of COP27.",
+      "original": "The fund for loss and damage promised at COP27 was adopted on the first day of COP28.",
+      "cited": [
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the fund was adopted on the first day of COP28, not COP27.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "negation",
+      "claim": "The COP28 climate conference was not held in Dubai, UAE.",
+      "original": "The COP28 climate conference was held in Dubai, UAE.",
+      "cited": [],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that COP28 was hosted in Dubai, UAE.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "negation",
+      "claim": "The Loss and Damage Fund will not be hosted by the World Bank for an initial period of four years.",
+      "original": "The Loss and Damage Fund will be hosted by the World Bank for an initial period of four years.",
+      "cited": [
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the new fund is to be hosted by the World Bank for an initial period of four years.",
+      "detected": true
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "entity",
+      "claim": "COP28 resulted in an agreement to transition away from fossil fuels in the aviation sector.",
+      "original": "COP28 resulted in an agreement to transition away from fossil fuels in energy systems.",
+      "cited": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "label": "partially_supported",
+      "confidence": 0.9,
+      "rationale": "The evidence confirms the agreement to transition away from fossil fuels in energy systems, but does not mention the aviation sector.",
+      "detected": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "wrong_citation",
+      "claim": "The successful landing made India the first nation to land on the lunar south pole.",
+      "original": "The successful landing made India the first nation to land on the lunar south pole.",
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that 'India became the first nation to land at the lunar south pole'.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "negation",
+      "claim": "The Chandrayaan-3 mission did not land on the Moon via a precise, phased descent of the Vikram lander, which carried the Pragyan rover.",
+      "original": "The Chandrayaan-3 mission landed on the Moon via a precise, phased descent of the Vikram lander, which carried the Pragyan rover.",
+      "cited": [
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Chandrayaan-3 landed via 'the precise, phased descent of the Vikram Lander carrying the Pragyan Rover', directly contradicting the claim.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "fabricated",
+      "claim": "The propulsion module of Chandrayaan-3 weighed exactly 2145 kilograms at launch.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "None of the provided evidence sources mention the weight of the propulsion module at launch.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "entity",
+      "claim": "The Chandrayaan-3 spacecraft successfully touched down near the lunar north pole.",
+      "original": "The Chandrayaan-3 spacecraft successfully touched down near the lunar south pole.",
+      "cited": [
+        3,
+        5,
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the spacecraft landed near the lunar south pole, not the north pole.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "number",
+      "claim": "During the descent, the Vikram lander's speed was gradually reduced from 2.45 kilometers per second to almost zero to execute the soft landing.",
+      "original": "During the descent, the Vikram lander's speed was gradually reduced from 1.68 kilometers per second to almost zero to execute the soft landing.",
+      "cited": [
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the speed was reduced from 1.68km per second, not 2.45 kilometers per second.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "date",
+      "claim": "Chandrayaan-3 achieved a soft landing near the Moon's south pole on August 25, 2023.",
+      "original": "Chandrayaan-3 achieved a soft landing near the Moon's south pole on August 23, 2023.",
+      "cited": [
+        3,
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the landing occurred on August 23, 2023, not August 25.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "entity",
+      "claim": "The landing process involved a precise, phased descent of the Vikram lander, carrying the Rashid rover.",
+      "original": "The landing process involved a precise, phased descent of the Vikram lander, carrying the Pragyan rover.",
+      "cited": [
+        5
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence states the Vikram lander was carrying the Pragyan rover, not the Rashid rover.",
+      "detected": true
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "negation",
+      "claim": "The successful landing failed to make India the fourth country overall to execute a soft landing on the Moon.",
+      "original": "The successful landing made India the fourth country overall to execute a soft landing on the Moon.",
+      "cited": [
+        3,
+        5,
+        6
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that the landing made India the fourth country overall to execute a soft landing on the Moon.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "entity",
+      "claim": "Nuclear fusion occurs when light nuclei, such as hydrogen isotopes, combine to form heavier elements like iron, releasing vast amounts of energy.",
+      "original": "Nuclear fusion occurs when light nuclei, such as hydrogen isotopes, combine to form heavier elements like helium, releasing vast amounts of energy.",
+      "cited": [
+        2,
+        4,
+        6
+      ],
+      "label": "partially_supported",
+      "confidence": 0.9,
+      "rationale": "The evidence confirms fusion involves light nuclei like hydrogen combining to form heavier elements like helium or new nuclei and releasing energy, but does not mention iron.",
+      "detected": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "negation",
+      "claim": "Major projects like JET and ITER do not aim to develop commercially viable energy distribution.",
+      "original": "Major projects like JET and ITER aim to develop commercially viable energy distribution.",
+      "cited": [
+        1
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence S1-C3 explicitly states that projects like JET and ITER are established 'in the hopes of soon developing a commercially viable energy distribution project', directly contradicting the claim that they do not aim for this.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "wrong_citation",
+      "claim": "Nuclear fusion research uses methods such as magnetic confinement fusion and inertial confinement fusion.",
+      "original": "Nuclear fusion research uses methods such as magnetic confinement fusion and inertial confinement fusion.",
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence states that 'At present, two main experimental approaches are being studied: magnetic confinement and inertial confinement'.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "fabricated",
+      "claim": "The Commonwealth Fusion Systems SPARC tokamak achieved its first sustained plasma confinement in October 2025 at a temperature of 100 million degrees Celsius.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "unsupported",
+      "confidence": 1.0,
+      "rationale": "None of the provided evidence mentions the SPARC tokamak achieving sustained plasma confinement in October 2025.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "number",
+      "claim": "ITER is designed to produce 300 Megawatts of fusion power.",
+      "original": "ITER is designed to produce 500 Megawatts of fusion power.",
+      "cited": [
+        2
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence states that ITER is designed to produce 500 Megawatts of fusion power, not 300 Megawatts.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "entity",
+      "claim": "ITER has seven international members consisting of China, India, Japan, South Korea, the European Union, the Russian Federation, and Canada.",
+      "original": "ITER has seven international members consisting of China, India, Japan, South Korea, the European Union, the Russian Federation, and the United States.",
+      "cited": [
+        2
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence S2-C4 lists the seventh member as the United States, whereas the claim states Canada.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "date",
+      "claim": "Private fusion companies raised $4.5 billion in the year leading up to July 2024.",
+      "original": "Private fusion companies raised $4.5 billion in the year leading up to July 2026.",
+      "cited": [
+        3
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Evidence S3-C3 states that private fusion companies raised $4.5 billion in the year leading up to July 2026, not July 2024.",
+      "detected": true
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "negation",
+      "claim": "The International Fusion Materials Irradiation Facility is not a joint European-Japanese project planned to be constructed in Japan to test materials against high-energy fusion neutrons.",
+      "original": "The International Fusion Materials Irradiation Facility is a joint European-Japanese project planned to be constructed in Japan to test materials against high-energy fusion neutrons.",
+      "cited": [
+        2
+      ],
+      "label": "contradicted",
+      "confidence": 1.0,
+      "rationale": "Source 2 states the opposite, describing the International Fusion Materials Irradiation Facility as 'a joint European-Japanese project that will be constructed in Japan'.",
+      "detected": true
+    }
+  ],
+  "controls": [
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "control",
+      "claim": "The James Webb Space Telescope has studied weather on gas giant exoplanets.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that 'Webb has studied weather on gas giant exoplanets'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "control",
+      "claim": "Data collected by the James Webb Space Telescope has prompted over 2,600 research papers.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that data has prompted 'more than 2,600 research papers'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "control",
+      "claim": "Dust and water can form and survive surprisingly close to Sagittarius A*, the supermassive black hole at the center of the Milky Way.",
+      "original": null,
+      "cited": [
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that 'dust and water can form and survive surprisingly close to the supermassive black hole at the centre of our Milky Way galaxy'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "control",
+      "claim": "The James Webb Space Telescope has sized up asteroids in Earth's neighborhood.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Webb has provided 'new insights into the planets of our own solar system while sizing up asteroids in our own planet’s neighborhood'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "control",
+      "claim": "New images of Centaurus A cut through thick dust lanes to show a densely packed tapestry of individual stars and an active galaxy.",
+      "original": null,
+      "cited": [
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Webb's sensitivity 'cuts through the thick lanes of dust that obscure Centaurus A’s centre... showing a densely packed tapestry of individual stars and an active, everchanging galaxy'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What has the James Webb Space Telescope discovered so far?",
+      "type": "control",
+      "claim": "The James Webb Space Telescope has uncovered the survival of dust and water near the Milky Way's central black hole.",
+      "original": null,
+      "cited": [
+        4,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S4-C2 states that astronomers discovered 'that dust and water can form and survive surprisingly close to the supermassive black hole at the centre of our Milky Way galaxy.'",
+      "false_alarm": false
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "control",
+      "claim": "High-risk AI systems are subject to specific legal requirements and strict obligations including risk management, data governance, human oversight, and conformity assessments.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence states that high-risk AI systems are subject to strict requirements, including risk management, data governance, human oversight, and conformity assessments.",
+      "false_alarm": false
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "control",
+      "claim": "The EU AI Act classifies AI systems according to their risk, regulating high-risk applications while prohibiting unacceptable risks and leaving minimal-risk systems unregulated.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that the Act classifies AI by risk, regulates high-risk applications, prohibits unacceptable risks, and leaves minimal-risk systems unregulated.",
+      "false_alarm": false
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "control",
+      "claim": "Deployers of high-risk AI systems also carry certain obligations under the EU AI Act.",
+      "original": null,
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence states explicitly that 'Deployers of high-risk AI systems have some obligations'.",
+      "false_alarm": false
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "control",
+      "claim": "Deployers of high-risk AI systems are defined as natural or legal persons, public authorities, agencies, or other bodies deploying an AI system in a professional capacity.",
+      "original": null,
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence explicitly defines deployers as natural or legal persons, public authorities, agencies or other bodies that deploy an AI system in a professional capacity.",
+      "false_alarm": false
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "control",
+      "claim": "High-risk applications include CV-scanning tools that rank job applicants.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S5-C4 explicitly states that 'high-risk applications, such as a CV-scanning tool that ranks job applicants' are included.",
+      "false_alarm": false
+    },
+    {
+      "question": "How does the EU AI Act regulate high-risk AI systems?",
+      "type": "control",
+      "claim": "Additional requirements for high-risk AI systems include compliance with the requirements, conformity assessments, and maintaining a quality management system.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "partially_supported",
+      "confidence": 0.9,
+      "rationale": "While compliance with requirements and conformity assessments are mentioned, the provided evidence does not mention a 'quality management system'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "control",
+      "claim": "As fears grew regarding the quality of assets, credit markets froze.",
+      "original": null,
+      "cited": [
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that credit markets froze because of fears regarding mortgages granted to subprime borrowers.",
+      "false_alarm": false
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "control",
+      "claim": "Many lenders failed to closely assess borrowers' abilities to repay.",
+      "original": null,
+      "cited": [
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Source 4 states that many lenders providing housing loans did not closely assess borrowers' abilities to make loan repayments.",
+      "false_alarm": false
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "control",
+      "claim": "Banks used securitisation to package mortgage loans into mortgage-backed securities and collateralised debt obligations.",
+      "original": null,
+      "cited": [
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The texts detail how banks used securitisation to package mortgage cash flows/loans into mortgage-backed securities and collateralised debt obligations.",
+      "false_alarm": false
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "control",
+      "claim": "The downturn in the United States housing market exposed widespread vulnerabilities tied to subprime lending and risky borrowing.",
+      "original": null,
+      "cited": [
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The US housing market downturn served as a catalyst for a crisis exposing risks like subprime lending.",
+      "false_alarm": false
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "control",
+      "claim": "Banks developed an originate-and-distribute business model, using securitisation to package mortgage cash flows into mortgage-backed securities and collateralised debt obligations.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Source 3 explicitly details that banks developed a new banking business model of originating and distributing mortgages through securitisation.",
+      "false_alarm": false
+    },
+    {
+      "question": "What caused the 2008 global financial crisis?",
+      "type": "control",
+      "claim": "The 2008 global financial crisis was triggered by a downturn in the United States housing market.",
+      "original": null,
+      "cited": [
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Source 4 states that a downturn in the US housing market was a catalyst for the global financial crisis.",
+      "false_alarm": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "control",
+      "claim": "Casgevy (exagamglogene autotemcel) is the first-ever approved CRISPR-based therapy.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly describes Casgevy as the 'First-ever approved CRISPR-based therapy'.",
+      "false_alarm": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "control",
+      "claim": "Casgevy was developed through a collaboration between Vertex Pharmaceuticals and CRISPR Therapeutics.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states that Casgevy was 'developed in collaboration between CRISPR Therapeutics and Vertex Pharmaceuticals'.",
+      "false_alarm": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "control",
+      "claim": "Casgevy has received regulatory clearance in multiple regions.",
+      "original": null,
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that Casgevy 'has since received regulatory clearance in multiple regions'.",
+      "false_alarm": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "control",
+      "claim": "Casgevy is indicated for the treatment of transfusion-dependent beta thalassemia.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states that 'Casgevy is indicated for the treatment of severe hematological disorders—specifically, it targets conditions such as... transfusion-dependent β-thalassemia (TDT)'.",
+      "false_alarm": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "control",
+      "claim": "Vertex is the manufacturer and exclusive license holder of Casgevy.",
+      "original": null,
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that 'Vertex is the manufacturer and exclusive license holder of CASGEVY'.",
+      "false_alarm": false
+    },
+    {
+      "question": "Which CRISPR-based therapies have been approved and when?",
+      "type": "control",
+      "claim": "Approval for Casgevy occurred in late 2023.",
+      "original": null,
+      "cited": [
+        1,
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that approval for Casgevy occurred in late 2023 (specifically December 8, 2023).",
+      "false_alarm": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "control",
+      "claim": "India's Unified Payments Interface (UPI) digital payments system was launched in April 2016 by the National Payments Corporation of India (NPCI).",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that UPI was launched in 2016 by the National Payments Corporation of India (NPCI).",
+      "false_alarm": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "control",
+      "claim": "During the first decade of operations, the transaction values of the Unified Payments Interface rose from ₹0.07 lakh crore to approximately ₹314 lakh crore.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states transaction values rose from ₹0.07 lakh crore in FY 2016-17 to approximately ₹314 lakh crore in FY 2025-26.",
+      "false_alarm": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "control",
+      "claim": "Over its first decade of operations, transaction volume of the Unified Payments Interface surged nearly 12,000-fold, expanding from 2 crore transactions in FY 2016-17 to over 24,162 crore transactions in FY 2025-26.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms transaction volume expanded from just 2 crore transactions in FY 2016-17 to over 24,162 crore transactions in FY 2025-26, an almost 12,000-fold surge.",
+      "false_alarm": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "control",
+      "claim": "By FY 2025-26, the Unified Payments Interface platform achieved daily averages of 66 crore transactions and ₹0.86 lakh crore in value.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms daily averages of 66 crore transactions and ₹0.86 lakh crore in value for FY 2025-26.",
+      "false_alarm": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "control",
+      "claim": "The Unified Payments Interface was launched on April 11, 2016, by the National Payments Corporation of India (NPCI) under the regulatory oversight of the Reserve Bank of India (RBI).",
+      "original": null,
+      "cited": [
+        2,
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that the Unified Payments Interface was launched on April 11, 2016, by the NPCI under the regulatory oversight of the RBI.",
+      "false_alarm": false
+    },
+    {
+      "question": "How fast has India's UPI digital payments system grown?",
+      "type": "control",
+      "claim": "The Unified Payments Interface captures nearly 49% of global real-time payments.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states that 'UPI captures nearly 49% of global real-time payments'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "control",
+      "claim": "Intermittent fasting is an eating pattern involving timed cycles of eating and fasting.",
+      "original": null,
+      "cited": [],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence states that intermittent fasting is 'an eating pattern in which you cycle between periods of eating and periods of fasting'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "control",
+      "claim": "Intermittent fasting can provide benefits such as weight loss, improved blood sugar control, and changes in hormone levels and cellular repair processes.",
+      "original": null,
+      "cited": [],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence supports all of these listed benefits, including weight loss, blood sugar control, hormone function changes, and cellular repair.",
+      "false_alarm": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "control",
+      "claim": "Some evidence raises questions about whether the health claims of intermittent fasting have been overhyped or if certain practices could potentially be harmful.",
+      "original": null,
+      "cited": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence states that 'Recent evidence, however, has raised questions about the strength of these claims' and that it 'may be shown to be more effective... or less effective' with one study suggesting it 'can be harmful'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "control",
+      "claim": "Intermittent fasting can exert anti-inflammatory effects.",
+      "original": null,
+      "cited": [
+        2,
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence explicitly states that intermittent fasting can 'reduce inflammation' and has 'anti-inflammatory effects'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "control",
+      "claim": "Intermittent fasting can improve glucose homeostasis, lipid profiles, blood sugar control, and chronic illness control.",
+      "original": null,
+      "cited": [
+        2,
+        3,
+        4
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence mentions benefits including improvements in glucose homeostasis, lipid profiles, blood sugar control, and chronic illness control.",
+      "false_alarm": false
+    },
+    {
+      "question": "What does research say about the health effects of intermittent fasting?",
+      "type": "control",
+      "claim": "Researchers face obstacles in accurately determining what people are actually eating during dietary interventions.",
+      "original": null,
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that 'The biggest obstacle to making the data more robust... is also the hardest to solve: \"We have no idea what people are actually eating,\"' which applies to dietary interventions.",
+      "false_alarm": false
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "control",
+      "claim": "The COP28 climate conference was held in Dubai, UAE.",
+      "original": null,
+      "cited": [],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that COP28 was hosted in Dubai, UAE.",
+      "false_alarm": false
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "control",
+      "claim": "The fund for loss and damage promised at COP27 was adopted on the first day of COP28.",
+      "original": null,
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states that the fund for loss and damage promised at COP27 was adopted on the very first day of COP28.",
+      "false_alarm": false
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "control",
+      "claim": "The COP28 conference yielded commitments to triple renewable energy.",
+      "original": null,
+      "cited": [
+        1,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that the outcome included commitments or agreement to triple renewable energy.",
+      "false_alarm": false
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "control",
+      "claim": "The Loss and Damage Fund will be hosted by the World Bank for an initial period of four years.",
+      "original": null,
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states the new fund will be hosted by the World Bank for an initial period of four years.",
+      "false_alarm": false
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "control",
+      "claim": "Financial commitments totaling $792 million were made toward the Loss and Damage Fund and related funding arrangements by 19 countries.",
+      "original": null,
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S6-C6 explicitly states that 19 countries made commitments totaling $792 million towards the fund and funding arrangements related to loss and damage.",
+      "false_alarm": false
+    },
+    {
+      "question": "What were the key outcomes of the COP28 climate conference?",
+      "type": "control",
+      "claim": "COP28 resulted in an agreement to transition away from fossil fuels in energy systems.",
+      "original": null,
+      "cited": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Multiple sources confirm that the agreement calls to 'transition away from fossil fuels in energy systems'.",
+      "false_alarm": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "control",
+      "claim": "During the descent, the Vikram lander's speed was gradually reduced from 1.68 kilometers per second to almost zero to execute the soft landing.",
+      "original": null,
+      "cited": [
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states 'The lander's speed was gradually reduced from 1.68km per second to almost zero'.",
+      "false_alarm": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "control",
+      "claim": "The successful landing made India the fourth country overall to execute a soft landing on the Moon.",
+      "original": null,
+      "cited": [
+        3,
+        5,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence states India became 'the fourth country ever to execute a soft landing on the Moon'.",
+      "false_alarm": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "control",
+      "claim": "The Chandrayaan-3 spacecraft successfully touched down near the lunar south pole.",
+      "original": null,
+      "cited": [
+        3,
+        5,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence confirms that the spacecraft touched down in the lunar south pole region.",
+      "false_alarm": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "control",
+      "claim": "Chandrayaan-3 achieved a soft landing near the Moon's south pole on August 23, 2023.",
+      "original": null,
+      "cited": [
+        3,
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "The evidence explicitly states that on August 23, 2023, Chandrayaan-3 achieved a soft landing near the Moon's south pole.",
+      "false_alarm": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "control",
+      "claim": "The Chandrayaan-3 mission landed on the Moon via a precise, phased descent of the Vikram lander, which carried the Pragyan rover.",
+      "original": null,
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence [S5-C2] explicitly mentions the precise, phased descent of the Vikram Lander carrying the Pragyan Rover for the Chandrayaan-3 mission.",
+      "false_alarm": false
+    },
+    {
+      "question": "How did the Chandrayaan-3 mission land on the Moon?",
+      "type": "control",
+      "claim": "The landing process involved a precise, phased descent of the Vikram lander, carrying the Pragyan rover.",
+      "original": null,
+      "cited": [
+        5
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence [S5-C2] explicitly states 'the precise, phased descent of the Vikram Lander carrying the Pragyan Rover'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "control",
+      "claim": "ITER has seven international members consisting of China, India, Japan, South Korea, the European Union, the Russian Federation, and the United States.",
+      "original": null,
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S2-C4 explicitly lists the seven international members of ITER as China, India, Japan, South Korea, the European Union, the Russian Federation, and the United States.",
+      "false_alarm": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "control",
+      "claim": "ITER is designed to produce 500 Megawatts of fusion power.",
+      "original": null,
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence states that the Reactor 'produce[s] 500 Megawatt (MW) of fusion power'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "control",
+      "claim": "Major projects like JET and ITER aim to develop commercially viable energy distribution.",
+      "original": null,
+      "cited": [
+        1
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S1-C3 states that projects like JET and ITER were established with the aim of developing a commercially viable energy distribution project.",
+      "false_alarm": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "control",
+      "claim": "Private fusion companies raised $4.5 billion in the year leading up to July 2026.",
+      "original": null,
+      "cited": [
+        3
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S3-C3 confirms that private fusion companies raised $4.5 billion in the year to July 2026.",
+      "false_alarm": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "control",
+      "claim": "The International Fusion Materials Irradiation Facility is a joint European-Japanese project planned to be constructed in Japan to test materials against high-energy fusion neutrons.",
+      "original": null,
+      "cited": [
+        2
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Evidence S2-C5 states that the International Fusion Materials Irradiation Facility is 'a joint European-Japanese project that will be constructed in Japan' to 'test and select materials that can withstand the extreme conditions produced by high-energy fusion neutrons'.",
+      "false_alarm": false
+    },
+    {
+      "question": "What is the current state of nuclear fusion energy research?",
+      "type": "control",
+      "claim": "Nuclear fusion occurs when light nuclei, such as hydrogen isotopes, combine to form heavier elements like helium, releasing vast amounts of energy.",
+      "original": null,
+      "cited": [
+        2,
+        4,
+        6
+      ],
+      "label": "supported",
+      "confidence": 1.0,
+      "rationale": "Source 4 explicitly states that nuclear fusion 'occurs when two atomic nuclei, such as hydrogen isotopes, combine to form a new nucleus, which releases energy'.",
+      "false_alarm": false
+    }
+  ],
+  "usage": {
+    "llm_calls": 61,
+    "llm_cache_hits": 3,
+    "prompt_tokens": 220342,
+    "output_tokens": 36187,
+    "calls_by_model": {
+      "gemini-3.5-flash-lite": 61
+    },
+    "search_calls": 9,
+    "search_cache_hits": 0,
+    "search_credits": 9
+  },
+  "created_at": "2026-11-08T17:00:31"
+}
